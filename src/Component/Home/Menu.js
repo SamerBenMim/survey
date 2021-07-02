@@ -4,18 +4,27 @@ import { NavLink } from 'react-router-dom'
 // import Navigation from 
 export class Menu extends Component {
 
-changeColor= (e)=>{console.log( e.target)
+changeColor= (e)=>{
  e.target.classList.toggle('hover')
+}
+state={
+    li:'li',
+mystyle: "Navbar"
+}
+change=()=>{
+    this.setState({
+    li:'dark-li'
+    })
 }
 
     render() {
         return (
             <div className ="Menu">
                 <ul> 
-                    <li id="pro" className="li">Home</li>
-                    <NavLink to="/Login" exact activeClassName="activeLink" onMouseEnter={this.changeColor} onMouseLeave={this.changeColor} className="li">Login</NavLink>
-                    <NavLink to="/Login" exact activeClassName="activeLink" className="li" activeClassName="activeLink" onMouseEnter={this.changeColor} onMouseLeave={this.changeColor}>About US</NavLink>
-                    <li className="li"><span onMouseEnter={this.changeColor} onMouseLeave={this.changeColor}>Sign in</span></li>
+                    <NavLink to="/" exact activeClassName="activeLink" onMouseEnter={this.changeColor} onMouseLeave={this.changeColor} className={this.state.li}>Home</NavLink>
+                    <NavLink  to="/Login" exact fn={this.change} activeClassName="activeLink"  onMouseEnter={this.changeColor} onMouseLeave={this.changeColor} className={this.state.li} onClick={this.change}>Login</NavLink>
+                    <NavLink to="/AboutUs" exact activeClassName="activeLink" className={this.state.li} activeClassName="activeLink" onMouseEnter={this.changeColor} onMouseLeave={this.changeColor}>About US</NavLink>
+                    <NavLink className={this.state.li}to="/SignUp" exact><span className="bouton" onMouseEnter={this.changeColor} onMouseLeave={this.changeColor}>Sign Up</span></NavLink>
                 </ul>
             </div>
         )

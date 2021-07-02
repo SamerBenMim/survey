@@ -65,15 +65,27 @@
     text-decoration: none;
 
  }
- .Menu ul li span {
-     border:solid 2px #f05e5f;
-     padding : 12px 15px;
-     border-radius: 4px;
-     margin-top: -15px;
-     min-width: max-content;
+ .dark-li{
+  display: inline-flex;
+  color: #000000;
+  border-radius: 15px;
+  font-size:1.1em ;
+  font-family: Arial;
+  line-height: 0.5em;
+  list-style: none;
+  cursor: pointer;
+  margin-right: 65px;
+  text-decoration: none;
+
+}
+  .bouton {
+    border:solid 2px #f05e5f;
+    padding : 12px 15px;
+    border-radius: 4px;
+    margin-top: -15px;
+    min-width: max-content;
  }
 
-#pro { color : #f05e5f;}
 
  a img{
     width: 60%;

@@ -1,0 +1,91 @@
+
+.box-container h1 {
+    color:#82e9ff;
+    font-family: sans-serif;
+}
+.box-container{
+    width: 300px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 50px 15px;
+    margin-left: -75px;
+    background: #3f3d56;
+    margin-top: -30px;
+    height: auto;
+}
+  
+
+.input1 {
+    margin: 28px auto;
+    border:0;
+    background: none;
+    display: block;
+    border:2px solid #3498ad;
+    padding: 14px 10px;
+    width : 200px;
+    outline:none;
+    color:white;
+    border-radius:50px 15px ;
+    transition:0.25s;
+    text-align: center;
+}
+.input2:focus {
+width:280px;
+border-color:#d9bcfd ;
+}
+.input2 {
+    margin: 28px auto;
+    border:0;
+    background: none;
+    display: block;
+    border:2px solid #3498ad;
+    padding: 14px 10px;
+    width : 200px;
+    outline:none;
+    color:white;
+    border-radius:50px 15px ;
+    transition:0.25s;
+    text-align: center;
+}
+.input1:focus {
+width:280px;
+border-color:#91f9e7 ;
+}
+/*.box input [type = "password"] */
+.submit{
+    cursor: pointer;
+    border: 2px solid;
+    background: none;
+    display: block;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 50px 15px;
+    transition: 0.25s;
+    margin: auto;
+    width: 140px;
+}
+.submit:hover{
+    color: #255784;
+    background: #32b5e7;
+    box-shadow: 0 0 40px #0c0cfc, 0 0 30px blue;
+    transition-delay: 0.25s;
+}
+/* .input:hover{
+    color:#255784;
+background :#2ecc71;
+box-shadow:0 0 40px green ,0 0 30px green ;
+transition-delay: 0.25s;
+} */
+.imag{
+    width: 90%;
+    z-index: -2;
+    float: left;
+    margin-top: -58px;
+}
+.Container {
+    display: flex;
+}
+#container{
+    margin-bottom: 60px;
+    margin-top: 60px;}

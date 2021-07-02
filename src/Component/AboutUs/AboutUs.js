@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
 import Navbar from '../Home/Navbar'
 
-export class SignUp extends Component {
+export class AboutUs extends Component {
     render() {
         return (
             <div>
                 <Navbar/>
                 <div style={{textAlign:'center'}}>
-                 <h1 style={{textAlign:"center"}}>SignUp Page</h1>
+                 <h1 style={{textAlign:"center"}}>AboutUS</h1>
             </div>
-        )
-               
-            </div>
+        )            </div>
         )
     }
 }
 
-export default SignUp
+export default AboutUs
