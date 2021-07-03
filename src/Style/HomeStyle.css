@@ -1,8 +1,8 @@
 .img{
-    width: 65%;
-    z-index: -2;
-    float: right;
-    margin-top: -157px;
+  z-index: -2;
+  float: right;
+  margin-top: -84px;
+  width: 975px;
 } 
 *{
     margin: 0;
@@ -10,18 +10,17 @@
 }
 .box{
     margin-left: 150px;
-    margin-top: 7px;
+    margin-top: 79px;
+    overflow : hidden;
 }
 .box h1{
     font-size :3.5em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width: 27%;
     color: #312b39 ;
     margin-bottom: 40px;
 }
 .box p{
     color :rgb(192,192,192);
-    width :40%;
     text-align: justify;
     max-width: 390px;
     margin-bottom: 35px;
@@ -39,6 +38,7 @@
     font-weight: 700;
     border-radius: 5px;
     margin-top:  2%;
+    margin-right: 40px;
 }
  
 .Menu{
@@ -100,12 +100,11 @@ a{
     display: inline-block;
     width: 100%;
     height: auto;
-    overflow: hidden;
+    overflow-x: hidden;
 
 }
 .go{
-padding-left: 40px;
-    width:5%;
+width: 65px;
 vertical-align: middle;
 }
 .try{
@@ -117,15 +116,57 @@ vertical-align: middle;
 
 }
 .copyright{
-    width: 100%;
-    height: auto;
-    margin-left: 150px;
-    margin-top: 110px;
-   
+  padding: 0% 7%;
+}
+.copyright p{
+  font-family:Metropolis Regular,sans-serif;
+   color:#4F4F4F;
+    display:block;
+     margin:auto ;
+     text-align:center;
+     font-size:14px;
+      margin-top:83px;
+      margin-bottom: 20px;
+
+ 
 }
 .Logo{
-    display: inline-block;
-    cursor: pointer;
+  cursor: pointer;
+  display: block;
+  height: auto;
+  width: 41%;
+  position: absolute;
+  left: 1px;
+  top: 0;
+  min-width: 210px;
+  margin-left: 5.5%;
+}
+.darkLogo{
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+  height: auto;
+  width: 41%;
+  position: absolute;
+  left: 1px;
+  top: 0;
+  min-width: 210px;
+  margin-left: 5.5%;
+}
+.GOnow{
+  display: inline-block;
+}
+.lightLogo{
+  display: block;
+  opacity: 1;
+  cursor: pointer;
+  height: auto;
+  width: 41%;
+  position: absolute;
+  left: 1px;
+  top: 0;
+  min-width: 210px;
+  margin-left: 5.5%;
 }
 .hover{
     color: #fdaeae;
@@ -147,7 +188,7 @@ vertical-align: middle;
       text-align: left;
       animation: color 30s alternate infinite;
       perspective: 200px;
-      transform: translateX(26px);
+      /* transform: translateX(26px); */
     }
     .word {
       position: absolute;
@@ -165,7 +206,7 @@ vertical-align: middle;
     }
     .letter {
       transform: translateZ(200px);
-    }
+text-align: center;    }
     @keyframes anim {
       25% {
         transform: translateZ(0px);

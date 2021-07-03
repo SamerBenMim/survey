@@ -4,7 +4,7 @@ import '../../Style/HomeStyle.css'
 export class ImgComponent extends Component {
     render() {
         return (
-            <div>
+            <div className ="overflow">
                 <img src={img} alt = 'img' className="img"/>            
             </div>
 
