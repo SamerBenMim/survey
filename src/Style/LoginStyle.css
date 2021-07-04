@@ -3,16 +3,7 @@
     color:#82e9ff;
     font-family: sans-serif;
 }
-.box-container{
-    width: 300px;
-    padding: 40px;
-    text-align: center;
-    border-radius: 50px 15px;
-    margin-left: -75px;
-    background: #3f3d56;
-    margin-top: -30px;
-    height: auto;
-}
+
   
 
 .input1 {
@@ -78,10 +69,10 @@ box-shadow:0 0 40px green ,0 0 30px green ;
 transition-delay: 0.25s;
 } */
 .imag{
-    width: 90%;
+    width: 100%;
     z-index: -2;
     float: left;
-    margin-top: -58px;
+    margin-top: 10%;
 }
 .Container {
     display: flex;
@@ -89,3 +80,60 @@ transition-delay: 0.25s;
 #container{
     margin-bottom: 60px;
     margin-top: 60px;}
+    .external-box{
+        margin: auto;
+        margin-right: 221px;
+    }
+    .box-container{
+        width: 300px;
+        padding: 40px;
+        text-align: center;
+        border-radius: 50px 15px;
+        /* margin-left: -75px; */
+        background: #3f3d56;
+        /* margin-top: -30px; */
+        height: auto;
+    }
+
+
+    @media only screen and (max-width: 1306px){
+       
+        .box-container{
+            overflow-x: hidden;
+            margin-top: 35px;
+            padding: 12px;
+            margin-bottom: 35px;
+        }       
+        
+    }
+@media only screen and (max-width: 1092px){
+    .Container {
+    display: flex;
+    flex-direction: column;
+}
+.external-box {
+    margin: auto;
+    margin-bottom: 80px
+}
+}
+
+@media only screen and (max-width: 400px){
+    
+    .box-container{
+        margin-top: 45px;
+        padding: 0px;
+    }       
+    .input1 { width: 175px;
+    }
+    .input2 { width: 175px;
+    }
+    .submit{
+        width: 125px;
+    }
+    .input1:focus {     width: 230px;
+
+    }
+    .input2:focus {     width: 230px;
+
+    }
+}

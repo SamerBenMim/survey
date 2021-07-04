@@ -40,6 +40,9 @@
         .box h1{
             min-height: 158px;
         }
+        .box-container{
+            padding: 15px;
+        }
     }
 
     @media only screen and (max-width: 1211px){
@@ -114,11 +117,11 @@
     .copyright p{
       
         margin-top: -10px;
-        margin-bottom: 40px;           
-  
-   
+        margin-bottom: 40px;              
   }
-    }
+  
+  
+ }
    
     @media only screen and (max-width: 400px){
         .try{

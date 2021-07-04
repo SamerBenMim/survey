@@ -4,8 +4,9 @@ import Navbar from './Navbar'
 import Text from './Text'
 import Footer from './Footer'
 import '../../Style/Responsive.css'
-
+import SmallMenu from './Small-Menu'
 export class Home extends Component {
+    
     render() {
         return (
             

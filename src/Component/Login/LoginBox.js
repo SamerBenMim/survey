@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import '../../Style/Responsive.css'
 import '../../Style/LoginStyle.css'
 
 export class LoginBox extends Component {
     render() {
         return (
-            <div>
+            <div className="external-box">
                 <form className="box-container">
                 <div id="container">
                  <h1>Login</h1>
@@ -12,7 +13,7 @@ export class LoginBox extends Component {
                  <input  className="input2" type = "password" placeholder = "password" name=""></input>
                  <input  className="submit"type = "submit" value = "login" name=""></input>
                 </div>
-                 </form>  
+                </form>  
                
             </div>
         )
