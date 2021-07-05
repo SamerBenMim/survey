@@ -94,6 +94,34 @@ border-radius: 4px;
 margin-top: -15px;
 min-width: max-content;
 }
+
+
+
+.medium-li{
+  display: inline-flex;
+  color: #f8eeff;
+  border-radius: 15px;
+  font-size:1.1em ;
+  font-family: Arial;
+  line-height: 0.5em;
+  list-style: none;
+  cursor: pointer;
+  margin-right: 65px;
+  text-decoration: none;
+
+}
+  
+
+
+.medium-li > .bouton{
+  border:solid 2px rgb(87, 39, 204);
+padding : 12px 15px;
+border-radius: 4px;
+margin-top: -15px;
+min-width: max-content;
+}
+
+
  a img{
     width: 60%;
     margin-left: 125px;
@@ -110,6 +138,14 @@ a{
     overflow-x: hidden;
 
 }
+.dark-Navbar{
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+
+}
+
 .go{
 width: 65px;
 vertical-align: middle;
@@ -180,6 +216,9 @@ vertical-align: middle;
 }
 .dark-hover{
   color: #a200ff;
+}
+.medium-hover{
+  color: #deaeff;
 }
 .activeLink {
     color: #f05e5f;
@@ -271,6 +310,7 @@ text-align: center;    }
   width: fit-content;
 
 }
+
 .bouton3 {
   background-color: #ff968a;
   padding: 10px;

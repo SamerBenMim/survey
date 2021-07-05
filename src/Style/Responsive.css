@@ -2,12 +2,14 @@
 .menu-button {
     cursor: pointer;
     width: 30px;
-    /* display: none; */
+    display: none;
     position: absolute;
     right: 40px;
     top: 20px;}
 
     @media only screen and (max-width: 1519px){
+
+        
         .dynamic-text{
             display: block;
         }   
@@ -55,6 +57,10 @@
         }
         }
 @media only screen and (max-width: 1092px){
+    .menu-button {
+       
+        display: block;
+      }
     .Menu {
         display: none;
     }
@@ -79,7 +85,12 @@
     } 
     .Navbar{
         background-color: #312b39;
-        height: 11vh;
+        height: 70px;
+        margin-bottom: -5px;
+    }
+    .dark-Navbar{
+        background-color:rgb(63 59 81);
+        height: 66px;
         margin-bottom: -5px;
     }
     .darkLogo{

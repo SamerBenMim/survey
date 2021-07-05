@@ -9,7 +9,7 @@ export class Login extends Component {
         return (
             <div>
                
-                <Navbar mode="dark"/>
+                <Navbar MyClass="Navbar" mode="dark"/>
                 <div className="Container">
                 <ImgComponent />
                 <LoginBox />

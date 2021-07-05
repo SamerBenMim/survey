@@ -11,7 +11,7 @@ export class Home extends Component {
         return (
             
             <>
-                <Navbar/>
+                <Navbar MyClass="Navbar"/>
                 <ImgComponent/>
                 <Text/>   
                 <br></br>

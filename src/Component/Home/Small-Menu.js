@@ -70,9 +70,9 @@ if(!window.location.pathname){
  
                 <NavLink id="exit" to={ window.location.pathname}exact onClick={this.CloseMenu} ><p>X</p></NavLink>
                 <NavLink to="/" onClick={this.CloseMenu} exact><p>Home</p></NavLink>
-                <NavLink to="/SignUp" exact><p>Sign Up</p></NavLink>
+                <NavLink to="/SignUp" exact onClick={this.CloseMenu}><p>Sign Up</p></NavLink>
                 <NavLink to="/AboutUs" exact onClick={this.CloseMenu}><p>About Us</p></NavLink>
-                <NavLink to="/Login" exact><p class="bouton3">Login</p></NavLink>
+                <NavLink to="/Login"  exact onClick={this.CloseMenu}> <p class="bouton3">Login</p></NavLink>
         </div> 
         </div> 
         )

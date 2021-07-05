@@ -13,15 +13,19 @@ export class Menu extends Component {
             this.state.li = 'dark-li'
            
         }
+        else if (props.mode === 'medium'){
+            this.state.li = 'medium-li'
+
+        }
         else {
             this.state.li = 'li'
-
-          
         }
     }
    
-changeColor= (e)=>{if(this.props.mode==='dark') e.target.classList.toggle('dark-hover')
-
+changeColor= (e)=>{ if(this.props.mode==='dark') e.target.classList.toggle('dark-hover')
+else if( this.props.mode==='medium'){
+    e.target.classList.toggle('medium-hover')
+}
 else
  e.target.classList.toggle('hover')
 }

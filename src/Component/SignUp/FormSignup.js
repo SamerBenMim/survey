@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import useForm from './useForm'
 import validate from './validateInfo';
+import '../../Style/Form.css'
     const FormSignup = ({submitForm}) => {
         const { handleChange,  values,handleSubmit,errors } = useForm(submitForm,validate);
     
 
         return (
-            <div className='Content-form'> 
+            <div className='Content-form'>
             <form className="formulaire" onSubmit={handleSubmit}>
+            <h1>Sign Up</h1> 
+
                 <div className='form-inputs'>
+
                     <label className='form-label'> Username</label>
                     <input
                      id='user'
@@ -72,6 +76,6 @@ import validate from './validateInfo';
 
         )
     }
-
+   
 
 export default FormSignup
