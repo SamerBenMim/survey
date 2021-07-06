@@ -6,17 +6,13 @@ import SmallMenu from './Small-Menu'
 import Login from '../Login/Login'
 export class Navbar extends Component {
  
-      // OpenMenu = ()=>{
-      //   var menu = document.querySelector(".menu-button");
-      //   console.log("hahah")
-      //   menu.style.display='block' ;
-      // }
+    
       constructor(props){
        
         super(props)
         this.SmallMenuElement = React.createRef();
-        
-    }
+        console.log(this.SmallMenuElement)
+        }
         
          state = {
           changer:'false',

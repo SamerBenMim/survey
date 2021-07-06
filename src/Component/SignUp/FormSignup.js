@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import useForm from './useForm'
 import validate from './validateInfo';
+import { NavLink } from 'react-router-dom'
+
 import '../../Style/Form.css'
     const FormSignup = ({submitForm}) => {
         const { handleChange,  values,handleSubmit,errors } = useForm(submitForm,validate);
@@ -69,7 +71,7 @@ import '../../Style/Form.css'
                      <button className='form-input-btn' type='submit'>Sign up</button>
                 </div>
                 <span className='form-input-login'>
-          Already have an account? Login <a href='#'>here</a>
+          Already have an account? Login <NavLink to='/Login' href='#'>here</NavLink>
         </span>
             </form>
             </div>

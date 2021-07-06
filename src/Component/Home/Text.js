@@ -3,10 +3,23 @@ import '../../Style/HomeStyle.css'
 import go from'../../assets/go.png'
 import { NavLink } from 'react-router-dom'
 import DynamicText from './DynamicText'
-
+import Popup from './Pop-up'
 export class Text extends Component {
+    
+   constructor(props) {
+       super(props)
+   
+   }
+   
+     
     state={
-        color: 'red'
+        color: 'red',
+        popup:false
+    }
+    chState=()=>{
+        this.setState({
+            popup:true
+        })
     }
     changeColor=()=>{
         this.state.color !=="red"? (  this.setState({
@@ -16,6 +29,7 @@ export class Text extends Component {
         }))
        
     }
+  
     render() {
         return (
             <div className="box">
@@ -25,7 +39,7 @@ export class Text extends Component {
                 }
                 <p >Veniam nisi occaecat ad non ex aliquip ea incididunt irure labore laborum. Incididunt veniam consectetur elit ullamco ipsum pariatur aliquip nisi voluptate laboris non aliqua. Irure ex est deserunt nostrud sunt officia sit ipsum consectetur consequat proident cillum consequat pariatur.</p>
                 <div  >
-                <button style= {{ cursor:"pointer", backgroundColor: this.state.color}} onMouseEnter={this.changeColor} onMouseLeave={this.changeColor}>Read More</button>
+                <button  onClick={this.props.methode}  style= {{ cursor:"pointer", backgroundColor: this.state.color}} onMouseEnter={this.changeColor} onMouseLeave={this.changeColor}>Read More</button>
                 <div className="GOnow"><img src={go} alt ="go" className="go" />
                  <NavLink to='/Login' className="try" >START NOW </NavLink>
                  </div>

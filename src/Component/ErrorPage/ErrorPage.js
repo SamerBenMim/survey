@@ -4,7 +4,7 @@ import Navbar from '../Home/Navbar'
 export class ErrorPage extends Component {
     render() {
         return (<>
-                            <Navbar/>
+            <Navbar MyClass='Navbar'/>
 
             <div style={{textAlign:'center'}}>
                  <h1 style={{textAlign:"center"}}>Error Page</h1>

@@ -4,12 +4,12 @@ import Navbar from '../Home/Navbar'
 export class AboutUs extends Component {
     render() {
         return (
-            <div>
-                <Navbar/>
-                <div style={{textAlign:'center'}}>
-                 <h1 style={{textAlign:"center"}}>AboutUS</h1>
-            </div>
-        )            </div>
+            <>
+            <Navbar MyClass='Navbar'/>
+
+<div style={{textAlign:'center' }}>
+ <h1 style={{textAlign:"center"}}>About Us</h1>
+</div></>
         )
     }
 }
