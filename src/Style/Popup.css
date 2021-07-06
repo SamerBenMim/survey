@@ -1,0 +1,38 @@
+ .PopupStyle {
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:100;
+    background-color: #FFF;
+    width: 61vw;
+    height: 68vh;
+    border-radius: 20px;
+
+}
+
+
+ .OverLayStyle {
+    position:fixed; 
+    left:0;
+    bottom:0;
+    right:0;
+    top:0;
+    background-color : rgba(0,0,0, .7)
+}
+.PopupStyle p{
+    text-align: center;
+    padding: 20px;
+}
+@media only screen and (max-width: 1092px){
+
+.PopupStyle  {
+    font-size: small;
+    width: 78vw;
+    height: fit-content;
+}
+.PopupStyle p {
+    text-align: center;
+    padding: 7px;
+}
+}

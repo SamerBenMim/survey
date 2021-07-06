@@ -14,7 +14,7 @@ export class Home extends Component {
 console.log(this.state)  
     }
     state={
-        samer: "zai",
+        
         open : false
     
   }
@@ -22,7 +22,6 @@ console.log(this.state)
     
     methode=()=>{
         this.setState({open: !this.state.open,
-        samer : "znb"
         } )
     console.log(" ====> ", this.state.open , ) 
    // this.methode1()

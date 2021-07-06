@@ -169,9 +169,11 @@
                     margin-top: -20px;
                 }
                 .form-input-login {
+                    display: grid;
                     text-align: center;
                     padding-left: 10px;
                     padding-right: 10px;
+                    margin-bottom: 10px;
                 }
                    
 

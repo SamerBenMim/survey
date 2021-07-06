@@ -120,7 +120,7 @@ transition-delay: 0.25s;
 @media only screen and (max-width: 400px){
     
     .box-container{
-    margin-top: -29px;
+    margin-top: 50px;
         padding: 0px;
     }       
     .input1 { width: 175px;
