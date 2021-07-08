@@ -11,7 +11,7 @@ export class Home extends Component {
 
     constructor(props) {
         super(props)
-console.log(this.state)  
+// console.log(this.state)  
     }
     state={
         
@@ -23,12 +23,12 @@ console.log(this.state)
     methode=()=>{
         this.setState({open: !this.state.open,
         } )
-    console.log(" ====> ", this.state.open , ) 
+    // console.log(" ====> ", this.state.open , ) 
    // this.methode1()
     }
     
     methode1=()=>{
-        console.log('true')
+        /*console.log('true')*/
     }
 
     render() {

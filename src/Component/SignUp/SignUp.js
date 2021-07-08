@@ -12,6 +12,7 @@ const SignUp=()=>{
         setIsSubmitted(true);
     }
     
+    
         return (
             <div>
                 <Navbar MyClass="dark-Navbar" mode="medium"/>

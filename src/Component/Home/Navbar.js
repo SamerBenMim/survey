@@ -11,7 +11,7 @@ export class Navbar extends Component {
        
         super(props)
         this.SmallMenuElement = React.createRef();
-        console.log(this.SmallMenuElement)
+        // console.log(this.SmallMenuElement)
         }
         
          state = {

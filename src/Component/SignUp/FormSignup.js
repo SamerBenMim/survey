@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import '../../Style/Form.css'
     const FormSignup = ({submitForm}) => {
         const { handleChange,  values,handleSubmit,errors } = useForm(submitForm,validate);
-    
+    // console.log(values);
 
         return (
             <div className='Content-form'>
@@ -17,6 +17,7 @@ import '../../Style/Form.css'
 
                     <label className='form-label'> Username</label>
                     <input
+                     autoComplete='off'
                      id='user'
                      className='form-input'
                     type='text'
@@ -30,6 +31,7 @@ import '../../Style/Form.css'
                 <div className='form-inputs'>
                     <label className='form-label'> Email</label>
                     <input 
+                     autoComplete='off'
                      id='email'
                      type='text'
                      name='email'
