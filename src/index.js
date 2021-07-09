@@ -9,8 +9,8 @@ ReactDOM.render(
     <FirebaseContext.Provider value = {new Firebase()}>
     <App />
     </FirebaseContext.Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
+ ,document.getElementById('root')
 );
 
 reportWebVitals();

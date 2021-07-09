@@ -1,29 +1,46 @@
-import React, { Component } from 'react'
+import React, { useState,useEffect,useContext } from 'react'
 import '../../Style/Responsive.css'
 import '../../Style/LoginStyle.css'
 import { NavLink } from 'react-router-dom'
+import {FirebaseContext} from '../_Firebase/index'
 
-
-export class LoginBox extends Component {
-    render() {
+const LoginBox=(props)=> {
+   const firebase = useContext(FirebaseContext)
+const[email,setEmail]=useState('');
+const[password,setPassword]=useState('');
+const handleSubmit = e => {
+    e.preventDefault();
+    firebase.loginUser(email,password).then(user=>{ props.Redirection()
+    setEmail('');
+    setPassword('');
+    }).catch(e=>{
+        alert(e)
+    }
+    )
+}
+    useEffect(()=>{})
         return (
             <div className="external-box">
-                <form className="box-container">
+                <form onSubmit={handleSubmit} className="box-container">
                 <div id="container">
+                    
                  <h1>Login</h1>
-                 <input className="input1" type = "text" placeholder = "Username" name=""></input>
-                 <input  className="input2" type = "password" placeholder = "password" name=""></input>
+                 
+                 <input htmlFor='email' required autoComplete='off' onChange={e=>{setEmail(e.target.value)}} className="input1" type = "email" placeholder = "Username" name=""></input>
+                 <input required autoComplete='off'  onChange={e=>{setPassword(e.target.value)}}className="input2" type = "password" placeholder = "password" name=""></input>
                  <input  className="submit"type = "submit" value = "login" name=""></input>
                 </div>
                 <span className='form-input-login'>
-          Already have an account? Login <NavLink to='/SignUp' href='#'>here</NavLink>
+                Don’t have an account? Register  
+ <NavLink to='/SignUp' href='#'> here</NavLink>
         </span>
                 </form>  
             
             </div>
         )
-    }
+     
 }
-
 export default LoginBox
+
+
  

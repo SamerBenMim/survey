@@ -1,14 +1,67 @@
-import React, { useState } from 'react';
-import useForm from './useForm'
-import validate from './validateInfo';
+import React, { useState,useContext } from 'react';
 import { NavLink } from 'react-router-dom'
-
+import {FirebaseContext} from '../_Firebase/index'
 import '../../Style/Form.css'
-    const FormSignup = ({submitForm}) => {
-        const { handleChange,  values,handleSubmit,errors } = useForm(submitForm,validate);
-    // console.log(values);
+    const FormSignup = (props) => {
+        const firebase = useContext(FirebaseContext);
+        const data={
+            user:"",
+            email:'',
+            password:'',
+            confirmPassword:'',
+        }
 
-        return (
+        const error={
+            user:"",
+            email:'',
+            password:'',
+            confirmPassword:'',
+
+        }
+        const erroruser ={
+            user:"Please enter a valid username",
+            email:'',
+            password:'',
+            confirmPassword:'',
+
+        }
+        const passerror={
+            user:"",
+            email:'',
+            password:'Password does not mathc',
+            confirmPassword:'',
+
+        }
+        const emailerror={
+            user:"",
+            email:'Email address is invalid (Example : samer@proxym.com)',
+            password:'',
+            confirmPassword:'',
+  
+        }
+        const [loginData,setLoginData]= useState(data)
+        const [errors,setError]= useState(error)
+        const {user,email,password,confirmPassword}=loginData;
+
+        const handleChange=(e)=>{
+            const {email,password}=loginData;
+            setLoginData({...loginData,[e.target.id]:e.target.value})
+
+        }
+       const handleSubmit = e=>{
+           e.preventDefault();
+if(user.length<=3)setError(erroruser)
+else if (password!==confirmPassword){ 
+    setError(passerror)
+}else{  setError(error) ;firebase.signupUser(email,password).then(user=> {
+    props.Redirection()
+    setLoginData({...data})
+}).catch(e=>{ console.log(e) ;if(e.message==="The email address is badly formatted.")setError(emailerror)
+ else{ alert(e)  ; setError(error) ;setLoginData({...data}) } })   }
+
+       }
+        
+     return (
             <div className='Content-form'>
             <form className="formulaire" onSubmit={handleSubmit}>
             <h1>Sign Up</h1> 
@@ -17,58 +70,76 @@ import '../../Style/Form.css'
 
                     <label className='form-label'> Username</label>
                     <input
+                    htmlFor="user"
+                    required
                      autoComplete='off'
                      id='user'
                      className='form-input'
                     type='text'
                     name='username'
                     placeholder='Enter your username'
-                    value={values.username}
+                    value={user}
                     onChange={handleChange}
                      />
-                     {errors.username && <p>{errors.username}</p>}
+                     {
+                      error && errors.user && <p>{errors.user}</p>
+                     }
                 </div>
                 <div className='form-inputs'>
                     <label className='form-label'> Email</label>
                     <input 
+                    htmlFor='email'
+                    required
                      autoComplete='off'
+                     
                      id='email'
                      type='text'
                      name='email'
                      className='form-input'
                      placeholder='Enter your email'
-                     value={values.email} 
+                     value={email} 
                      onChange={handleChange}
                      />
-                    {errors.email && <p>{errors.email}</p>}
+                    {
+                      errors && errors.email && <p>{errors.email}</p>
+                    }
                 
                 </div>
                 <div className='form-inputs'>
                     <label className='form-label'> Password</label>
                     <input 
+                     htmlFor='password'
+                     required
                      id='password'
                      type='password'
                      name='password'
                      className='form-input'
                      placeholder='Enter your password'
-                     value={values.password} 
+                     value={password} 
                      onChange={handleChange}
                      />
-                     {errors.password && <p>{errors.password}</p>}
+
+                     {
+                      errors && errors.password && <p>{errors.password}</p>
+                     }
 
                 </div>
                 <div className='form-inputs'>
                     <label className='form-label'> Password</label>
                     <input 
-                     id='password2'
+                     htmlFor='confirmPassword'
+                     required
+                     id='confirmPassword'
                      type='password'
-                     name='password2'
+                     name='confirmPassword'
                      className='form-input'
                      placeholder='Confirm your password'
-                     value={values.password2} 
+                     value={confirmPassword} 
                      onChange={handleChange}
                      />
-                    {errors.password2 && <p>{errors.password2}</p>}
+                    {
+                   // error && <p>{error}</p>
+                    }
 
                      <button className='form-input-btn' type='submit'>Sign up</button>
                 </div>
