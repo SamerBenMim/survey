@@ -1,21 +1,22 @@
 import app from 'firebase/app'
 import 'firebase/auth'
+import 'firebase/firestore'
 
 const config = {
   
-    apiKey: "AIzaSyBHnt5h6ZyQeItMD6r_CP31d-w72b4f0Bs",
-    authDomain: "proxym-survey.firebaseapp.com",
-    databaseURL: "https://proxym-survey-default-rtdb.firebaseio.com",
-    projectId: "proxym-survey",
-    storageBucket: "proxym-survey.appspot.com",
-    messagingSenderId: "422345275696",
-    appId: "1:422345275696:web:5a84a5b60343b3626d70f5"
+  apiKey: "AIzaSyAkknbQ23Vi8qrhTGTud4381X5IrFTsDIo",
+  authDomain: "proxym-7b2c8.firebaseapp.com",
+  projectId: "proxym-7b2c8",
+  storageBucket: "proxym-7b2c8.appspot.com",
+  messagingSenderId: "59253182031",
+  appId: "1:59253182031:web:fa130103aa127ef6c3a43a"
   };
 
  class Firebase {
     constructor() {
     app.initializeApp(config)
     this.auth = app.auth() 
+    this.db= app.firestore();
     }
     //inscription
     signupUser=(email,password)=>{
@@ -29,6 +30,17 @@ const config = {
     signoutUser=  ()=>{
         this.auth.signOut();
     }
+
+
+    adduser=  (uid)=>{
+       return this.db.doc(`users/${uid}`);
+  }
+  addquestion=  (Qid)=>{
+    return this.db.doc(`Questions/${Qid}`);
+}
+  coll = (collection)=>{
+    return this.db.collection(`${collection}`)
+  };
 }
 
 export default Firebase

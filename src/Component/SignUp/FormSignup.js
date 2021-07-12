@@ -53,10 +53,28 @@ import '../../Style/Form.css'
 if(user.length<=3)setError(erroruser)
 else if (password!==confirmPassword){ 
     setError(passerror)
-}else{  setError(error) ;firebase.signupUser(email,password).then(user=> {
+}else{  setError(error) ;firebase.signupUser(email,password)
+ 
+    
+    .then(authUser=> {
+        firebase.adduser(authUser.user.uid).set({
+            user:user,
+            email:email, 
+            
+        })
     props.Redirection()
     setLoginData({...data})
-}).catch(e=>{ console.log(e) ;if(e.message==="The email address is badly formatted.")setError(emailerror)
+    
+    console.log('done')
+})
+/*.then((authUser)=>{
+    return firebase.adduser(authUser.user.uid).set({
+        user:user,
+        email:email, 
+        
+    })
+})*/
+.catch(e=>{ console.log(e) ;if(e.message==="The email address is badly formatted.")setError(emailerror)
  else{ alert(e)  ; setError(error) ;setLoginData({...data}) } })   }
 
        }
