@@ -1,6 +1,7 @@
 import app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
+var admin = require('firebase-admin');
 
 const config = {
   
@@ -16,6 +17,7 @@ const config = {
     constructor() {
     app.initializeApp(config)
     this.auth = app.auth() 
+    admin.initializeApp();
     this.db= app.firestore();
     }
     //inscription

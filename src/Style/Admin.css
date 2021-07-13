@@ -1,0 +1,122 @@
+.admin{
+    width: 200px;
+}
+.topnav{
+    display: flex;
+
+}
+.topnav h1{font-size: 230%;
+margin-left: 43px;
+margin-top: 47px;
+color: dimgrey;
+}
+.topnav h1 h2{font-size: 59%;
+    margin-left: 5px;
+    margin-top: 16px;
+    color: dimgrey;
+    }
+    .stats{
+        margin-top: 48px;
+        color: #9e3f3f;
+        font-size: 192%;
+        margin-left: 255px;
+        margin-bottom: -42px;
+    }
+
+
+    .admin-box-container {
+        width: 88vw;
+        padding: 40px;
+        text-align: center;
+        border-radius: 50px 15px;
+        /* margin-left: -75px; */
+        background: #3f3d56;
+        margin-top: -20px;
+        height: auto;
+        margin: auto;
+    }
+
+    .admin-input1 {
+        margin: 28px auto;
+        border: 0;
+        background: none;
+        display: block;
+        border: 2px solid #3498ad;
+        padding: 14px 10px;
+        width: 830px;
+        outline: none;
+        color: white;
+        border-radius: 50px 15px;
+        transition: 0.25s;
+        text-align: center;
+    }
+    .admin-input1:focus {
+        width: 1000px;
+        border-color: #91f9e7;
+    }
+    .admin-box-container h1{
+        color: #5984ff;
+        margin-top: -14px;
+        margin-bottom: 20px;  
+      }
+
+        .admin-box-container p {
+            color: #7d7d7d;
+            width: 85%;
+            margin: auto;
+           }
+           .admin-box-container p span {
+            color: #b52e2e;
+           }
+
+           .admin-input2{
+            margin: 28px auto;
+            border: 0;
+            background: none;
+            display: block;
+            border: 2px solid #3498ad;
+            padding: 14px 10px;
+            width: 225px;
+            outline: none;
+            color: white;
+            border-radius: 50px 15px;
+            transition: 0.25s;
+            text-align: center;
+        }
+        .blk2{
+            display: flex;
+            margin-top: -16px;
+        }
+        .admin-input3{
+            margin: 28px auto;
+            border: 0;
+            background: none;
+            display: block;
+            border: 2px solid #3498ad;
+            padding: 14px 10px;
+            width: 140px;
+            outline: none;
+            color: white;
+            border-radius: 50px 15px;
+            transition: 0.25s;
+            text-align: center;
+        }
+        .admin-input3:focus{
+            width: 150px;
+            border-color: #91f9e7;
+
+        }
+        .admin-input2:focus{
+            width: 270px;
+            border-color: #91f9e7;
+
+        }
+        #delete-button{
+            margin-left: 177px;
+        }
+        #admin-input3{
+            margin-left: 178px;
+            width: 140px;
+        }
+      
+        
