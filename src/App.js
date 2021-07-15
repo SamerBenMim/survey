@@ -10,7 +10,8 @@ import Welcome from './Component/quizz/welcome';
 import ErrorPage from './Component/ErrorPage/ErrorPage'
 import {FirebaseContext} from './Component/_Firebase'
 import SessoinContext from './Component/Session/SessionContext';
-import Question from './Component/Questions/question';
+import EspaceAdmin from './Component/Questions/EspaceAdmin';
+import Loader from './Component/Loader/Loader';
 function App() {
   const firebase = useContext(FirebaseContext);
   const [userSession,setUserSession] =useState(null);
@@ -27,7 +28,8 @@ function App() {
         <Route exact path = "/AboutUS" component = {AboutUs}/>
         <Route exact path = "/Welcome" component = {Welcome}/>
         <Route exact path = "/Results" component = {Results}/>
-        <Route exact path = "/espaceAdmin" component = {Question}/>
+        <Route exact path = "/espaceAdmin" component = {EspaceAdmin}/>
+        <Route exact path = "/Loader" component = {Loader}/>
 
         <Route  component = {ErrorPage}/>
       </Switch>

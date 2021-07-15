@@ -3,10 +3,11 @@ import '../../Style/Responsive.css'
 import '../../Style/LoginStyle.css'
 import { NavLink } from 'react-router-dom'
 import {FirebaseContext} from '../_Firebase/index'
-
+import { Admin } from '../_Firebase/Firebase'
 const LoginBox=(props)=> {
    const firebase = useContext(FirebaseContext)
-const[email,setEmail]=useState('');
+
+   const[email,setEmail]=useState('');
 const[password,setPassword]=useState('');
 const handleSubmit = e => {
     e.preventDefault();

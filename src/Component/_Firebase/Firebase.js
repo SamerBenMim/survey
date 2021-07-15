@@ -1,7 +1,7 @@
 import app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
-var admin = require('firebase-admin');
+const admin = require('firebase-admin');
 
 const config = {
   
@@ -13,13 +13,18 @@ const config = {
   appId: "1:59253182031:web:fa130103aa127ef6c3a43a"
   };
 
+
+
+
+
  class Firebase {
     constructor() {
     app.initializeApp(config)
     this.auth = app.auth() 
-    admin.initializeApp();
     this.db= app.firestore();
     }
+
+  
     //inscription
     signupUser=(email,password)=>{
       return  this.auth.createUserWithEmailAndPassword(email,password);
@@ -43,6 +48,32 @@ const config = {
   coll = (collection)=>{
     return this.db.collection(`${collection}`)
   };
+
+
+}/*
+export class Admin{
+  constructor() {
+    admin.initializeApp();    this.auth = admin.auth() 
+    this.db= admin.firestore();
+    }
+
+ fn(){
+    admin
+    .auth()
+    .getUserByEmail('admin@admin.admin')
+    .then((user) => {console.log('enfin')
+      if (user.emailVerified) {
+        return admin.auth().setCustomUserClaims(user.uid, {
+          admin: true,
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
 }
+}
+*/
 
 export default Firebase

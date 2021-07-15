@@ -1,0 +1,153 @@
+.WlcImg{
+    width: 402px;
+}
+.userName{
+    margin-left: 166px;
+    margin-top: -94px;
+    color: #ffffff;
+    size: 50%;
+    font-size:75px;
+    text-shadow: -5px 1px 20px black;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    -webkit-text-stroke-width: 1px;
+}
+.Question{
+    width: 57vw;
+    height: 200px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    margin: auto;
+    margin-top: 48px;
+    margin-bottom: 25px;
+    margin-inline: 177px;
+    border: solid 1px #a900ff;
+    display: table-cell;
+    vertical-align: middle;
+
+}
+.Question p{
+    max-width: 50vw;
+    margin: auto;
+    font-size: 20px;
+}
+.proposision{
+    margin: auto;
+    display: grid;
+}
+.blkQ1{display: flex;
+margin: auto;
+}
+.blkQ2{display: flex;
+    margin: auto;
+    }
+
+.prop1{
+    background-color: #fcdaca;
+    width: 27vw;
+    height: 90px;
+    border-radius: 20px;
+    margin: 14px;
+}
+.prop2{
+    background-color: #fcdaca;
+    width: 27vw;
+    height: 90px;
+    border-radius: 20px;
+    margin: 14px;
+}
+.prop3{
+    background-color: #fcdaca;
+    width: 27vw;
+    height: 90px;
+    border-radius: 20px;
+    margin: 14px;
+}
+.prop4{
+    background-color: #fcdaca;
+    width: 27vw;
+    height: 90px;
+    border-radius: 20px;
+    margin: 14px;
+}
+
+.QuizzBox{
+    display: inline-flex;
+    margin-left: 38px;}
+
+ .Rightbar{
+    border-radius: 18px;
+    width: 275px;
+    height: 531px;
+        background-color: #a200ca;
+    position: absolute;
+    right: 18px;
+    margin-top: 44px;
+}
+.RightBarImg{
+    width: 200px;
+
+}
+@media only screen and (max-width: 1000px){
+.WlcImg{
+    width: 50%;
+    margin-left: 30px;
+    margin-top: 12px;
+}
+.userName{
+    font-size: 7vw;
+    margin-top: -10%;
+    margin-left: 16%;
+}
+.sidebar {
+    left: 8px;
+}
+.icon i {
+    font-size: 1.3rem;}
+}
+
+@media only screen and (max-width: 500px){
+    .sidebar .list {
+        padding-left: 1px;
+        
+    }
+    .sidebar {
+      
+        width: 51px;}
+    }
+
+
+
+    .button {
+        overflow: hidden;
+        position: relative;
+     
+        background-color: #fcdaca;
+       
+
+       
+    }
+    .circle {
+        z-index: 1;
+        height: 200%;
+        background-color: rgb(4, 212, 39);
+        /* border-radius: 100px; */
+        top: -10px;
+        left: -50px;
+        transition: height .5s ease-out,width 1.75s ease-in-out;
+        position: absolute;
+        width: 0;
+    }
+    .button h3 {
+        transition: color .75s ease-out;
+        position: relative;
+        z-index: 2;
+        font-weight: 400!important;
+    }
+    
+    
+    .button:hover > .circle {
+        height: 200%;
+        width: 200%;
+    }.button:hover > h3 {
+        color: #7cdc9f!important;
+    }

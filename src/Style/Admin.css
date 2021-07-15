@@ -119,4 +119,8 @@ color: dimgrey;
             width: 140px;
         }
       
-        
+        .AdminlogoutContainer{
+            position: relative;
+            top: -86px;
+            left: 739px;
+        }

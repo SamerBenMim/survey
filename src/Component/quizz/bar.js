@@ -23,13 +23,13 @@ toggleBtn.onclick = function(){
 
 export class bar extends Component {
 
-
+    
 
     render() {
         return (
             <div>
                 <div>
-            <div className="sidebar">
+            <div className="sidebar active">
         <ul className="list">
             <li className="list-item active">
                 <b></b>
@@ -108,7 +108,7 @@ export class bar extends Component {
         </ul>
     </div>
 
-    <div className="toggle" onClick={
+    <div className="toggle active" onClick={
         ()=>{
             let toggleBtn = document.querySelector('.toggle');
 let sidebar = document.querySelector('.sidebar');

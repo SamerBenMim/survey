@@ -4,9 +4,31 @@ import '../../Style/Admin.css'
 import admin from '../../assets/icon-administrateur-protection-personnes-departemantale-associations-familiales-copie.png'
 import ReactNotification from 'react-notifications-component'
 import { store } from 'react-notifications-component'
-
-const Question = () => {
+import AdminLogout from '../Logout.js/AdminLogout';
+import Loader from '../Loader/Loader';
+const EspaceAdmin = (props) => {
   
+ const [userSession,setUserSession] =useState(null);
+    const fb= useContext(FirebaseContext);
+    const [isAdmin,setIsAdmin] =useState(false);
+
+     useEffect(() => {
+        let listener =fb.auth.onAuthStateChanged(user=>{
+            user? setUserSession(user):props.history.push('/Login')
+            if(user)
+            if( user.uid!=='XwwwxAp18nZ03kCsTCM5fNXUu512'){
+              setTimeout(() => {
+                props.history.push('/Welcome');
+
+              }, 2000);
+             }else{
+              setIsAdmin(true)
+             }
+        }); 
+       return ()=>{
+           listener()
+       }
+     }, [isAdmin] )
 
 
   
@@ -94,10 +116,10 @@ else{
 
    }).then(successNotif 
     ).catch(e=>alert(e))
-    // setTimeout(() => {
-    //   window.location.reload(false);
+    setTimeout(() => {
+      window.location.reload(false);
   
-    // }, 1500);
+    }, 1500);
   console.log(prop1)
   console.log(blkQuestion)
 
@@ -212,7 +234,7 @@ const listQuestions = monQuestion.map((q) =>
 
 
 
-
+if(isAdmin)
     return (
       
         <div style={{background:'#2a2b33',height: 'auto'}}> 
@@ -496,8 +518,13 @@ const listQuestions = monQuestion.map((q) =>
 
                 </form>
                 </div>
+                <AdminLogout ></AdminLogout>
+
         </div>
     )
+    else{
+      return <Loader></Loader>
+    }
 
 }
 
@@ -573,4 +600,4 @@ const listQuestions = monQuestion.map((q) =>
           })
       }
 
-export default Question
+export default EspaceAdmin

@@ -12,7 +12,7 @@ body{
     font-family: 'Montserrat', sans-serif;
 } */
 
-
+/* side bar styles */
 .sidebar{
     position: fixed;
     top: 20px;
@@ -25,9 +25,6 @@ body{
     background: #a200ca;
     transition: width 0.5s;
     overflow-x: hidden;
-    min-height: 100vh;
-    /* background: #fff; */
-    font-family: 'Montserrat', sans-serif;
 }
 
 .sidebar.active{
@@ -133,15 +130,16 @@ body{
 }
 
 .sidebar .list .list-item .list-item-link .title{
+    min-width: max-content;
     position: relative;
     display: block;
     padding-left: 10px;
     height: 60px;
     line-height: 60px;
     white-space: normal;
-    min-width: max-content;
 }
 
+/* toggle button styles */
 
 .toggle{
     position: fixed;
