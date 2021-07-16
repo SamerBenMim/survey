@@ -6,11 +6,14 @@ import Bar  from './bar'
 import Loader from '../Loader/Loader'
 import QuizzBox from './QuizzBox'
 import WelcomeImg from './WelcomeImg'
+import CubeQuizz from './CubeQuizz'
+import Done from './Done'
 export const Welcome = (props) => {
     const [userSession,setUserSession] =useState(null);
     const [userData,setUserData] =useState({});
     const [userUID,setUserUID] =useState('');
     const fb= useContext(FirebaseContext);
+    const [Class,currentClass] =useState('display');
     
     useEffect(() => {
        let listener =fb.auth.onAuthStateChanged(user=>{
@@ -46,12 +49,15 @@ export const Welcome = (props) => {
             <div style={{textAlign:"center" ,margin:'auto',fontFamily:" 'Montserrat', sans-serif"}}> 
             <div className="WlcBar">
             <WelcomeImg/>
+            
             <h1 className ='userName'>{userData.user}</h1>
             </div>
             <QuizzBox userId= {userUID}></QuizzBox>
-            {/* <h1>WELCOME {userData.user}</h1>
-            <Logout></Logout> */}
+            <Done></Done>
+            <CubeQuizz></CubeQuizz>
+            {/* <Logout></Logout> */}
             <Bar></Bar>
+            
             </div>
         )
     }

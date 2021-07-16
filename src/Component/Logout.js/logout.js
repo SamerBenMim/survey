@@ -31,6 +31,7 @@ export const Logout = () => {
              <span class="slider round"></span>
             
             </label>
+            <div style={{marginTop:"10px"}}>Logout here</div>
         </div>
     )
 }

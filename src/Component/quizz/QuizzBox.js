@@ -1,9 +1,15 @@
 import React,{useState,useEffect,useContext} from 'react'
 import RightBar from './RightBar'
 import {FirebaseContext} from '../_Firebase/index'
-
+import '../../Style/WlcPage.css'
 export default function QuizzBox(props) {
     
+    const changeClass=()=>{
+    document.querySelector(".ShowHide").classList.add("display")
+    document.querySelector(".doneContainer").classList.remove("display")
+
+}
+
 
     const firebase = useContext(FirebaseContext);
     const[bonusMaterialSituation,setbonusMaterialSituation]=useState(0);
@@ -61,11 +67,11 @@ console.log(userUID)
         setCurrentProp4(quests[currentID].Question.prop4.text)}
       else{
 
-       alert('fin de quiz')
+        changeClass()
         setEndQuizz(true)
         console.log(userUID)
             if(userUID){    firebase.coll('users').doc(userUID).update(Results)
-            alert('finally')    }
+              ;changeClass() }
 else{alert('not goi')}
 
       }
@@ -124,24 +130,25 @@ console.log(Results)
 return (
         <div className='QuizzBox'>
 
-            <div>
+            <div className="QuizzBoxContainer ">
+                <div className="ShowHide display">
             <div className="Question"><p>Excepteur dolor sint ullamco sint consequat ullamco ea.Et est anim id minim fugiat magna eu excepteur sit anim in occaecat et.Anim exercitation culpa exercitation proident aliqua culpa nulla anim adipisicing excepteur ut nisi laboris.</p></div>
 
 <div className="proposision">
     <div className="blkQ1">
-        <div className="prop1 button" onClick={()=>(nextQuestion(1))}><div  class="circle"></div><h3>{currentProp1}</h3></div>
-        <div className="prop2"  onClick={()=>(nextQuestion(2))} >{currentProp2}</div>
+        <div className="prop1 button" onClick={()=>(nextQuestion(1))}  ><div  class="circle"></div><h3>{currentProp1}</h3></div>
+        <div className="prop2 button"  onClick={()=>(nextQuestion(2))} ><div  class="circle"></div><h3>{currentProp2}</h3></div>
     </div>
     <div className="blkQ2">
-        <div className="prop3" onClick={()=>(nextQuestion(3))}>{currentProp3}</div>
-        <div className="prop4"  onClick={()=>(nextQuestion(4))}>{currentProp4}</div>
+        <div className="prop3 button" onClick={()=>(nextQuestion(3))}><div  class="circle"></div><h3>{currentProp3}</h3></div>
+        <div className="prop4 button"  onClick={()=>(nextQuestion(4))}><div  class="circle"></div><h3>{currentProp4}</h3></div>
     </div>
 </div>
+            </div>
             </div>
 
             <div>
                 <RightBar></RightBar>
-
             </div>
            
         </div>

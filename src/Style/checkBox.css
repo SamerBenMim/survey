@@ -56,3 +56,6 @@
   .slider.round:before {
     border-radius: 50%;
   }
+  .logoutContainer{
+    margin-top: 40px;    margin-left: 36px;
+  }
