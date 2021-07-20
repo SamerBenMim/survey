@@ -96,10 +96,10 @@ body{
     background: #a200ca;
 }
 
-.sidebar .list .list-item.active b:nth-child(1),
+/* .sidebar .list .list-item.active b:nth-child(1),
 .sidebar .list .list-item.active b:nth-child(2){
     display: block;
-}
+} */
 
 .sidebar .list .list-item.active .list-item-link{
     color: #000;
@@ -137,8 +137,14 @@ body{
     height: 60px;
     line-height: 60px;
     white-space: normal;
+  
 }
 
+.list a{
+    font-family: Montserrat, sans-serif;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
 /* toggle button styles */
 
 .toggle{
@@ -173,4 +179,8 @@ body{
 
 .toggle.active i.open, .toggle i.close{
     display: none;
+}
+
+.list a {
+    text-decoration: none;
 }

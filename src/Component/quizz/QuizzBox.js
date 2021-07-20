@@ -2,6 +2,15 @@ import React,{useState,useEffect,useContext} from 'react'
 import RightBar from './RightBar'
 import {FirebaseContext} from '../_Firebase/index'
 import '../../Style/WlcPage.css'
+import Intermidiaire from './Intermidiaire'
+import eventBus from '../EventBus'
+
+
+
+
+
+
+
 export default function QuizzBox(props) {
     
     const changeClass=()=>{
@@ -10,7 +19,7 @@ export default function QuizzBox(props) {
 
 }
 
-
+const [n,setn] =useState(0);
     const firebase = useContext(FirebaseContext);
     const[bonusMaterialSituation,setbonusMaterialSituation]=useState(0);
     const[bonusWorkingConditions,setbonusWorkingConditions]=useState(0);
@@ -27,7 +36,8 @@ export default function QuizzBox(props) {
         bonusWorkLifeBalance ,
         bonusCareerGrowth,
         bonusRespectAndRecognition
-        }
+        },
+        numberOfQuestions:n
       }
 
 
@@ -38,13 +48,36 @@ const[currentProp2,setCurrentProp2]=useState('');
 const[currentProp3,setCurrentProp3]=useState('');
 const[currentProp4,setCurrentProp4]=useState('');
 const[totalObject,setTotalObject]=useState([]);
+// const[mounted,setMounted]=useState(false);
 
 const[currentID,setCurrentId]=useState(0);
 const[endQuizz,setEndQuizz]=useState(false);
 const [userUID,setUserUID] =useState('');
-let listener =firebase.auth.onAuthStateChanged(user=>{  setUserUID(user.uid)})
+
+
+let listener =firebase.auth.onAuthStateChanged(user=>{  if(user)setUserUID(user.uid)})
+
+
 useEffect(() => {
-console.log(userUID)
+// var mount = false;
+
+//     eventBus.on("mounted", (mydata) => {
+// if(mydata){ mount = true
+// console.log('now is mounted & mounted is',mount)
+// }
+// }  );
+  
+
+
+
+
+
+
+
+
+
+
+// console.log(userUID)
 
     firebase.coll('Questions')
     .get()
@@ -66,12 +99,20 @@ console.log(userUID)
         setCurrentProp3(quests[currentID].Question.prop3.text)
         setCurrentProp4(quests[currentID].Question.prop4.text)}
       else{
-
+         
         changeClass()
         setEndQuizz(true)
-        console.log(userUID)
-            if(userUID){    firebase.coll('users').doc(userUID).update(Results)
-              ;changeClass() }
+        // console.log(userUID)
+            if(userUID){ 
+                
+            //     setbonusMaterialSituation(bonusMaterialSituation/n) 
+            // setbonusWorkingConditions(bonusWorkingConditions/n) 
+            // setbonusWorkLifeBalance(bonusWorkLifeBalance/n) 
+            // setbonusCareerGrowth(bonusCareerGrowth/n) 
+            // setbonusRespectAndRecognition(bonusRespectAndRecognition/n) 
+                
+                firebase.coll('users').doc(userUID).update(Results)
+              ;changeClass();  }
 else{alert('not goi')}
 
       }
@@ -80,10 +121,17 @@ else{alert('not goi')}
 
     )
     .catch(e=>alert(e))
+
+//  return () => {
+//                   eventBus.remove("mounted");
+//             }
+
+
 }, [currentID])
 
 const nextQuestion=(NumProp)=>{
-
+setn(n+1)
+console.log(n)
     if(!endQuizz){
         if(NumProp===1){
             setbonusMaterialSituation(Number(bonusMaterialSituation)+Number(totalObject[currentID].Question.prop1.bonusMaterialSituation)) 
@@ -126,9 +174,17 @@ const nextQuestion=(NumProp)=>{
         alert('endd')
     }
 }
-console.log(Results)
+// console.log(Results)
+
+
+const  SendToResults = () => {
+    console.log("sending");
+    eventBus.dispatch("Results", Results);
+  };
+
 return (
-        <div className='QuizzBox'>
+        <div className='QuizzBox'
+          >
 
             <div className="QuizzBoxContainer ">
                 <div className="ShowHide display">
@@ -150,7 +206,8 @@ return (
             <div>
                 <RightBar></RightBar>
             </div>
-           
         </div>
     )
 }
+
+

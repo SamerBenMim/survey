@@ -15,6 +15,14 @@ export const Welcome = (props) => {
     const fb= useContext(FirebaseContext);
     const [Class,currentClass] =useState('display');
     
+//    const  fromQuizzToResults=(Results)=>{
+//     props.prop(Results)
+//             console.log("Resultsssssssssss",Results)
+//     }
+
+
+
+
     useEffect(() => {
        let listener =fb.auth.onAuthStateChanged(user=>{
            user? setUserSession(user):props.history.push('/Login')
@@ -43,19 +51,21 @@ export const Welcome = (props) => {
         }
     }, [userSession] )
 
-    console.log(userUID)
+    // console.log(userUID)
    return userSession===null ?(<div> <Loader></Loader></div>)
 : (
-            <div style={{textAlign:"center" ,margin:'auto',fontFamily:" 'Montserrat', sans-serif"}}> 
+            <div style={{textAlign:"center" ,margin:'auto',fontFamily:" 'Montserrat', sans-serif"}}   > 
             <div className="WlcBar">
-            <WelcomeImg/>
+            <WelcomeImg  />
             
             <h1 className ='userName'>{userData.user}</h1>
             </div>
-            <QuizzBox userId= {userUID}></QuizzBox>
+            <QuizzBox userId= {userUID}
+            //   prop={fromQuizzToResults} 
+                 ></QuizzBox>
             <Done></Done>
             <CubeQuizz></CubeQuizz>
-            {/* <Logout></Logout> */}
+            <Logout></Logout>
             <Bar></Bar>
             
             </div>

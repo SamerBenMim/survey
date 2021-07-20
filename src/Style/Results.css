@@ -1,0 +1,39 @@
+.PieContainer{
+    height: 350px;
+    margin: auto;
+    margin-top: 46px;
+    margin-left: 340px;
+
+}
+.Pie{
+    width: 10vw;
+    height: 178px;
+    margin-right: 4vw;
+    display: inline-block;
+}
+.Pie5{
+    
+    margin-right: 0;
+    
+}
+.blockPieContainer{
+    width: 100%;
+    text-align: center;
+}
+
+.blockPie{
+  
+
+margin: auto;
+margin-left: 365px;
+}
+.blockPieContainer h1 {
+    margin-left: 365px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-family: sans-serif;
+    margin-left: 365px;
+    color: #848080;
+}
