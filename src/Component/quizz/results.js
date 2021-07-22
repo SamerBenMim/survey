@@ -65,9 +65,9 @@ useEffect(() => {     anyNameFunction1()
            
             const loadContent = ()=>{ 
                  setSalarySatisfaction(data.userResult.bonusMaterialSituation)
-                setWorkConditions(data.userResult.bonusCareerGrowth)
-                setRespect(data.userResult.bonusWorkLifeBalance)
-                setWorkLifeBalance(data.userResult.bonusCareerGrowth)
+                setWorkConditions(data.userResult.bonusWorkingConditions)
+                setRespect(data.userResult.bonusRespectAndRecognition)
+                setWorkLifeBalance(data.userResult.bonusWorkLifeBalance)
                 setChallenges(data.userResult.bonusCareerGrowth)
             setn(data.numberOfQuestions)
             }
@@ -118,7 +118,8 @@ setTimeout(() => {
 }, [userEmail])
 //setTimeout(() => {
 const s =  <span>Personal Satisfaction Rate<span style={{color:'red'}}>{(SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance )/(5*n)}</span> </span> 
-     if(userSession&&!loading)
+ console.log(s)   
+if(userSession&&!loading)
      
         return ( 
             
@@ -149,14 +150,12 @@ const s =  <span>Personal Satisfaction Rate<span style={{color:'red'}}>{(SalaryS
                                 },
                                 legend: {
                                     labels: {
-                                        // This more specific font property overrides the global property
                                         font: {
                                             size: 19
                                         },
                                         // padding:{
                                         //     top:.1
                                         // },
-                                        backgroundColor:["yellow"],
                                     },
                                     
                                 }
@@ -204,9 +203,7 @@ const s =  <span>Personal Satisfaction Rate<span style={{color:'red'}}>{(SalaryS
                         borderColor: [
                             'rgba(54, 162, 235, 10)',
                             'rgba(255, 99, 132, 10)',
-                            // 'rgba(255, 206, 86, 10)',
-                            // 'rgba(75, 192, 192, 10)',
-                            // 'rgba(153, 102, 255, 10)',
+                            
                         ],
                         borderWidth:1
     
@@ -241,11 +238,8 @@ const s =  <span>Personal Satisfaction Rate<span style={{color:'red'}}>{(SalaryS
                        size: 15
                    },
                    display: true,
-                   text: {s},
-                //    padding: {
-                //        top: 20,
-                //        bottom: 40
-                //    },
+                   text:` Salary Satisfaction Rate (${(SalarySatisfaction/n)} %)`,
+              
                   
                },
                legend: {
@@ -267,21 +261,7 @@ const s =  <span>Personal Satisfaction Rate<span style={{color:'red'}}>{(SalaryS
 
            responsive: true,
            maintainAspectRatio: false,
-        //    scales: {
-        //        yAxes: [{
-        //            ticks: {
-        //                beginAtZero:true,
-                     
-        //            }
-        //        }],
-
-
-        //        // y: {
-        //        //     label :'tdf',
-        //        //     max: 100,
-        //        // },
-               
-        //    }
+  
        }}
  width={500}
  height={491}
@@ -299,16 +279,12 @@ data={{
        backgroundColor: [
            'rgba(54, 162, 235, 0.2)',
            'rgba(255, 99, 132, 0.2)',
-           // 'rgba(255, 206, 86, 0.2)',
-           // 'rgba(75, 192, 192, 0.2)',
-           // 'rgba(153, 102, 255, 0.2)',
+          
        ],
        borderColor: [
            'rgba(54, 162, 235, 10)',
            'rgba(255, 99, 132, 10)',
-           // 'rgba(255, 206, 86, 10)',
-           // 'rgba(75, 192, 192, 10)',
-           // 'rgba(153, 102, 255, 10)',
+         
        ],
        borderWidth:1
 
@@ -340,11 +316,8 @@ data={{
                        size: 15
                    },
                    display: true,
-                   text: ` Personal Satisfaction Rate (${(SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5} %)`,
-                //    padding: {
-                //        top: 20,
-                //        bottom: 40
-                //    },
+                   text: ` Working conditions & Security Satisfaction  (${WorkConditions/n} %)`,
+              
                   
                },
                legend: {
@@ -391,23 +364,19 @@ data={{
        
      
        data: [
-           (SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5
+        WorkConditions/n
            ,
-         100-(SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5
+         100-WorkConditions/n
        ],
        backgroundColor: [
            'rgba(54, 162, 235, 0.2)',
            'rgba(255, 99, 132, 0.2)',
-           // 'rgba(255, 206, 86, 0.2)',
-           // 'rgba(75, 192, 192, 0.2)',
-           // 'rgba(153, 102, 255, 0.2)',
+          
        ],
        borderColor: [
            'rgba(54, 162, 235, 10)',
            'rgba(255, 99, 132, 10)',
-           // 'rgba(255, 206, 86, 10)',
-           // 'rgba(75, 192, 192, 10)',
-           // 'rgba(153, 102, 255, 10)',
+         
        ],
        borderWidth:1
 
@@ -439,11 +408,8 @@ data={{
                        size: 15
                    },
                    display: true,
-                   text: ` Personal Satisfaction Rate (${(SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5} %)`,
-                //    padding: {
-                //        top: 20,
-                //        bottom: 40
-                //    },
+                   text: ` Work Life Balance Satisfaction (${(WorkLifeBalance)/n} %)`,
+              
                   
                },
                legend: {
@@ -465,21 +431,7 @@ data={{
 
            responsive: true,
            maintainAspectRatio: false,
-        //    scales: {
-        //        yAxes: [{
-        //            ticks: {
-        //                beginAtZero:true,
-                     
-        //            }
-        //        }],
-
-
-        //        // y: {
-        //        //     label :'tdf',
-        //        //     max: 100,
-        //        // },
-               
-        //    }
+  
        }}
  width={500}
  height={491}
@@ -490,23 +442,19 @@ data={{
        
      
        data: [
-           (SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5
+        (WorkLifeBalance)/n
            ,
-         100-(SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5
+         100-(WorkLifeBalance)/n
        ],
        backgroundColor: [
            'rgba(54, 162, 235, 0.2)',
            'rgba(255, 99, 132, 0.2)',
-           // 'rgba(255, 206, 86, 0.2)',
-           // 'rgba(75, 192, 192, 0.2)',
-           // 'rgba(153, 102, 255, 0.2)',
+          
        ],
        borderColor: [
            'rgba(54, 162, 235, 10)',
            'rgba(255, 99, 132, 10)',
-           // 'rgba(255, 206, 86, 10)',
-           // 'rgba(75, 192, 192, 10)',
-           // 'rgba(153, 102, 255, 10)',
+         
        ],
        borderWidth:1
 
@@ -539,7 +487,7 @@ data={{
                        size:15
                    },
                    display: true,
-                   text: ` Personal Satisfaction Rate (${(SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5} %)`,
+                   text: ` Respect & Recognition Satisfaction  (${(Respect)/n} %)`,
                 //    padding: {
                 //        bottom: -80
                 //    },
@@ -564,21 +512,7 @@ data={{
 
            responsive: true,
            maintainAspectRatio: false,
-        //    scales: {
-        //        yAxes: [{
-        //            ticks: {
-        //                beginAtZero:true,
-                     
-        //            }
-        //        }],
-
-
-        //        // y: {
-        //        //     label :'tdf',
-        //        //     max: 100,
-        //        // },
-               
-        //    }
+  
        }}
  width={500}
  height={491}
@@ -589,23 +523,19 @@ data={{
        
      
        data: [
-           (SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5
+        (Respect)/n
            ,
-         100-(SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5
+         100-(Respect)/n
        ],
        backgroundColor: [
            'rgba(54, 162, 235, 0.2)',
            'rgba(255, 99, 132, 0.2)',
-           // 'rgba(255, 206, 86, 0.2)',
-           // 'rgba(75, 192, 192, 0.2)',
-           // 'rgba(153, 102, 255, 0.2)',
+          
        ],
        borderColor: [
            'rgba(54, 162, 235, 10)',
            'rgba(255, 99, 132, 10)',
-           // 'rgba(255, 206, 86, 10)',
-           // 'rgba(75, 192, 192, 10)',
-           // 'rgba(153, 102, 255, 10)',
+         
        ],
        borderWidth:1
 
@@ -637,11 +567,8 @@ data={{
                        size: 15
                    },
                    display: true,
-                   text: ` Personal Satisfaction Rate (${(SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5} %)`,
-                //    padding: {
-                //        top: 20,
-                //        bottom: 40
-                //    },
+                   text: ` Career Growth Satisfaction (${(Challenges)/n} %)`,
+              
                   
                },
                legend: {
@@ -662,21 +589,7 @@ data={{
 
            responsive: true,
            maintainAspectRatio: false,
-        //    scales: {
-        //        yAxes: [{
-        //            ticks: {
-        //                beginAtZero:true,
-                     
-        //            }
-        //        }],
-
-
-        //        // y: {
-        //        //     label :'tdf',
-        //        //     max: 100,
-        //        // },
-               
-        //    }
+  
        }}
  width={500}
  height={491}
@@ -687,23 +600,19 @@ data={{
        
      
        data: [
-           (SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5
+           Challenges/n
            ,
-         100-(SalarySatisfaction+Challenges+WorkConditions+Respect+WorkLifeBalance)/5
+         100-Challenges/n
        ],
        backgroundColor: [
            'rgba(54, 162, 235, 0.2)',
            'rgba(255, 99, 132, 0.2)',
-           // 'rgba(255, 206, 86, 0.2)',
-           // 'rgba(75, 192, 192, 0.2)',
-           // 'rgba(153, 102, 255, 0.2)',
+          
        ],
        borderColor: [
            'rgba(54, 162, 235, 10)',
            'rgba(255, 99, 132, 10)',
-           // 'rgba(255, 206, 86, 10)',
-           // 'rgba(75, 192, 192, 10)',
-           // 'rgba(153, 102, 255, 10)',
+         
        ],
        borderWidth:1
 
@@ -723,7 +632,77 @@ data={{
                
              </div>
              </div>
+                <div className="GloabalPie">
+                <Pie 
+                       
+                       options = {{
+                        plugins: {
+                            title: {
+                                font: {
+                                    size: 20
+                                },
+                                display: true,
+                                text: "Distribution of Satisfaction",
+                                padding: {
+                                    top: 20,
+                                    bottom: 40
+                                },},
+                            legend: {
+                                display: true,
+                                labels: {
+                                    font: {
+                                        size: 14
+                                    },
+                                    backgroundColor:["yellow"],
+                                }
+                            }
+                            
+                        },
             
+            
+                        responsive: true,
+                        maintainAspectRatio: false,
+                    
+                    }}
+              width={500}
+              height={491}
+            data={{
+                
+                labels: ['Salary Satisfaction', 'Work Conditions & Security', 'Respect & recognition', 'Work Life Balance', 'Challenges & Career Growth'],
+                datasets: [{
+                    label: 'Satisfaction Rate (%)' ,
+
+                    data: [SalarySatisfaction/n, WorkConditions/n, Respect/n, WorkLifeBalance/n, Challenges/n],
+                    backgroundColor: [
+                      
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 10)',
+                        'rgba(54, 162, 235, 10)',
+                        'rgba(255, 206, 86, 10)',
+                        'rgba(75, 192, 192, 10)',
+                        'rgba(153, 102, 255, 10)',
+                    ],
+                    borderWidth:1
+
+                }],
+            
+                  
+               
+            }
+        
+        
+        }
+     
+       
+            
+            />
+                </div>
             </div>
         )
     

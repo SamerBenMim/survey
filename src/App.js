@@ -20,12 +20,9 @@ function App() {
   const firebase = useContext(FirebaseContext);
   const [userSession,setUserSession] =useState(null);
  
-//   const  GetFromWlc=(Results)=>{
-//     console.log("resultttttt",Results)
-// }
+
   
   return (
-   // <SessoinContext.Provider value={{"name":"smer"}}>
     <BrowserRouter>
       <Switch>
         <Route  exact path = "/"  component = {Home} />
@@ -39,13 +36,9 @@ function App() {
         <Route exact path = "/Statistics" component = {Stats}/>
         <Route exact path = "/InfoStats" component = {StatsInfo}/>
         <Route exact path = "/Services" component = {Services}/>
-
-
         <Route  component = {ErrorPage}/>
       </Switch>
-
     </BrowserRouter >
-  //  </SessoinContext.Provider>
 
   );
 };
