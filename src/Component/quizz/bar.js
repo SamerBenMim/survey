@@ -105,7 +105,7 @@ export class Barr extends Component {
 
 
 
-            <NavLink to="/Settings" exact  activeClassName="active" className="list-item" >
+            <NavLink to="/ContactUs" exact  activeClassName="active" className="list-item" >
                 <b></b>
                 <b></b>
                 <a href='/Results' className="list-item-link">
@@ -122,9 +122,12 @@ export class Barr extends Component {
         </ul>
     </div>
 {/* toggle button */}
-    <div className="toggle active" onClick={
-    
+    <div className="toggle active" 
+       
+    onClick={
+     
     ()=>{
+       
         let toggleBtn = document.querySelector('.toggle');
     let sidebar = document.querySelector('.sidebar');
     toggleBtn.classList.toggle('active');

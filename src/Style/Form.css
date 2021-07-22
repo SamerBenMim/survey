@@ -63,6 +63,10 @@
         width: 280px;
         border-color: #d9bcfd;
     }
+    #confirmPassword:focus {
+        width: 280px;
+        border-color: #d9bcfd;
+    }
     #password2:focus {
         width: 280px;
         border-color: #93f2ff;

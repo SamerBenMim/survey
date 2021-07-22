@@ -32,7 +32,7 @@ const [wc,setwc] =useState([]);
 const [rr,setrr] =useState([]);
 const [points,setpoints] =useState([]);
 const [dispertion,setdispertion] =useState([]);
-
+const [variance,setVariance]=useState(0);
 //const [done,setdone] =useState(false);
 // const [SalarySatisfaction,setSalarySatisfaction] =useState(10);
 const [loading, setLoading] = useState(true);
@@ -58,7 +58,8 @@ await loadContent1();
 
 
 var mn=100
-var mx=0          
+var mx=0    
+var v=0      
 const Ms=[]
 const Wlb=[]
 const Ch=[]
@@ -68,9 +69,12 @@ const percents = []
 const Satis=[0,0,0,0,0,0,0,0,0,0]
 const datass=[]
 var id=0
-useEffect(() => {     
+useEffect(() => {   
+ 
+   
 let listener =firebase.auth.onAuthStateChanged(user=>{
  user? setUserSession(user) :props.history.push('/Login')
+ if(user.email)
  setUserEmail(user.email)
 })
 
@@ -80,8 +84,15 @@ let listener =firebase.auth.onAuthStateChanged(user=>{
 .then(element=> {
 element.forEach(doc=>{ 
  const data =doc.data()
- if(data.userResult && data.numberOfQuestions){    
+ if(data.userResult && data.numberOfQuestions){ 
+
+  
      const loadContent = ()=>{ 
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+     v+=((data.userResult.bonusRespectAndRecognition+data.userResult.bonusWorkingConditions+data.userResult.bonusMaterialSituation+data.userResult.bonusWorkLifeBalance+data.userResult.bonusCareerGrowth)/(5*data.numberOfQuestions))*((data.userResult.bonusRespectAndRecognition+data.userResult.bonusWorkingConditions+data.userResult.bonusMaterialSituation+data.userResult.bonusWorkLifeBalance+data.userResult.bonusCareerGrowth)/(5*data.numberOfQuestions))
+      setVariance(v)
+      console.log(v) 
+
       Ms.push(data.userResult.bonusMaterialSituation /data.numberOfQuestions )
       Wlb.push(data.userResult.bonusWorkLifeBalance /data.numberOfQuestions )
       Ch.push(data.userResult.bonusCareerGrowth /data.numberOfQuestions )
@@ -89,10 +100,9 @@ element.forEach(doc=>{
       Rr.push(data.userResult.bonusRespectAndRecognition /data.numberOfQuestions )
    Satis[Math.trunc((data.userResult.bonusRespectAndRecognition+data.userResult.bonusWorkingConditions+data.userResult.bonusMaterialSituation+data.userResult.bonusWorkLifeBalance+data.userResult.bonusCareerGrowth)/(5*data.numberOfQuestions*10))]++
 
-
 if(mn > (data.userResult.bonusRespectAndRecognition+data.userResult.bonusWorkingConditions+data.userResult.bonusMaterialSituation+data.userResult.bonusWorkLifeBalance+data.userResult.bonusCareerGrowth)/(5*data.numberOfQuestions))
 {mn=((data.userResult.bonusRespectAndRecognition+data.userResult.bonusWorkingConditions+data.userResult.bonusMaterialSituation+data.userResult.bonusWorkLifeBalance+data.userResult.bonusCareerGrowth)/(5*data.numberOfQuestions))
-console.log("akbaaaar",mn)
+
 }
 if(mx< (data.userResult.bonusRespectAndRecognition+data.userResult.bonusWorkingConditions+data.userResult.bonusMaterialSituation+data.userResult.bonusWorkLifeBalance+data.userResult.bonusCareerGrowth)/(5*data.numberOfQuestions))
 mx=((data.userResult.bonusRespectAndRecognition+data.userResult.bonusWorkingConditions+data.userResult.bonusMaterialSituation+data.userResult.bonusWorkLifeBalance+data.userResult.bonusCareerGrowth)/(5*data.numberOfQuestions))
@@ -165,7 +175,7 @@ if(userSession&& !loading)
                                         size: 20
                                     },
                                     display: true,
-                                    text: ` Average Satisfaction of all participants (${(avg(ms)+avg(rr)+avg(ch)+avg(wc)+avg(wlb))/5} %)`,
+                                    text: ` Average Satisfaction of all participants (${((avg(ms)+avg(rr)+avg(ch)+avg(wc)+avg(wlb))/5).toFixed(3)} %)`,
                                     padding: {
                                         top: 20,
                                         bottom: 20
@@ -330,7 +340,7 @@ if(userSession&& !loading)
           datasets: [
             {
               label: '# of votes',
-              data: [dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4],dispertion[5]+dispertion[6],dispertion[7]+dispertion[8]+dispertion[9]],
+              data: [dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4],dispertion[5],dispertion[6]+dispertion[7]+dispertion[8]+dispertion[9]],
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(33, 35, 34, 0.2)',
@@ -416,7 +426,7 @@ if(userSession&& !loading)
         data={{
 
           datasets: [{
-            label: 'coordinates(participant id, Satisfaction percentage) ',
+            label: 'coordinates( id,percentage) ',
             data: points,
           backgroundColor: 'rgb(255, 99, 132)'
 
@@ -487,11 +497,11 @@ if(userSession&& !loading)
 <div className="interpretationContainer">
   <div className="analytics">
   <h1>Interpretations</h1>
-<p>The Minimum Satisfacion Rate Is <span style={{'color':"red"}}>{min} %</span> </p>
-<p>The Maximum Satisfaction Rate  Is <span style={{'color':"green"}}>{max}  %</span></p>
-<p>The Satisfaction Rate Variance Is {min}</p>
-<p>The Satisfaction Rate Standard deviation
- Is {max}</p>
+<p>The Minimum Satisfacion Rate Is <span style={{'color':"red" , 'fontSize':"25px"}}>{min} %</span> </p>
+<p>The Maximum Satisfaction Rate  Is <span style={{'color':"green",'fontSize':"25px"}}>{max}  %</span></p>
+<p>The Satisfaction Rate Variance Is : <span style={{'color':"purple",'fontSize':"25px"}}>{ (variance/(dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4]+dispertion[5]+dispertion[6]+dispertion[7]+dispertion[8]+dispertion[9])-((avg(ms)+avg(rr)+avg(ch)+avg(wc)+avg(wlb))/5)*((avg(ms)+avg(rr)+avg(ch)+avg(wc)+avg(wlb))/5)).toFixed(3)} </span></p>
+<p>The Satisfaction Rate Standard deviation 
+ Is : <span style={{'color':"blue",'fontSize':"25px"}}>{Math.sqrt((variance/(dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4]+dispertion[5]+dispertion[6]+dispertion[7]+dispertion[8]+dispertion[9])-((avg(ms)+avg(rr)+avg(ch)+avg(wc)+avg(wlb))/5)*((avg(ms)+avg(rr)+avg(ch)+avg(wc)+avg(wlb))/5))).toFixed(3)} %</span> </p>
  </div>
  <div className ="statsimg">
                 <img src={img} alt = 'img' className="statimg"/>            
@@ -500,9 +510,9 @@ if(userSession&& !loading)
 <div className="jobRisk">
 <div>
   <h1 style={{  'color': '#848484',
-        'lineHeight': '50px',}}>Anticipation</h1>
-  <div id="cercle" style={{'background': '#2690ce85'}}><a><p>99%</p>of employees whould resign from their job and search for new opportunities</a></div>
-  <div id="cercle" style={{'background': '#ff492c75'}}><a><p>99%</p>of employees whould resign from their job and search for new opportunities</a></div>
+        'lineHeight': '50px',"fontFamily":'sans-serif'}}>Anticipation</h1>
+  <div id="cercle" style={{'background': '#2690ce85'}}><div style={{'marginTop': '34px'}}><p style={{"fontSize":"37px"}}>{((dispertion[9]+dispertion[8]+dispertion[7]+dispertion[6])/(dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4]+dispertion[5]+dispertion[6]+dispertion[7]+dispertion[8]+dispertion[9])).toFixed(2)}%</p>of employees whould resign from their job and search for new opportunities</div></div>
+  <div id="cercle" style={{'background': '#ff492c75'}}><div style={{'marginTop': '34px'}}><p style={{"fontSize":"37px"}}>{((dispertion[0]+dispertion[1]+dispertion[2])/(dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4]+dispertion[5]+dispertion[6]+dispertion[7]+dispertion[8]+dispertion[9])).toFixed(2)}%</p>of employees whould resign from their job and search for new opportunities</div></div>
 </div>
 </div>
 

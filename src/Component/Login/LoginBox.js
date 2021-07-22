@@ -35,6 +35,10 @@ const handleSubmit = e => {
                 Don’t have an account? Register  
  <NavLink to='/SignUp' href='#'> here</NavLink>
         </span>
+                <p style={{marginTop:"3px"}} className='form-input-login'>
+               Forgot pasword ? press  
+ <NavLink to='/Services' href='#'> here</NavLink>
+        </p>
                 </form>  
             
             </div>

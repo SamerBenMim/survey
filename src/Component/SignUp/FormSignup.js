@@ -60,7 +60,16 @@ else if (password!==confirmPassword){
         firebase.adduser(authUser.user.uid).set({
             user:user,
             email:email, 
-            
+             
+                userResult:{
+                    bonusMaterialSituation:0,
+                bonusWorkingConditions:0,
+                bonusWorkLifeBalance :0,
+                bonusCareerGrowth:0,
+                bonusRespectAndRecognition:0,
+                },
+                numberOfQuestions:0
+              
         })
     props.Redirection()
     setLoginData({...data})

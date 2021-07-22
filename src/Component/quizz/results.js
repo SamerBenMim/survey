@@ -51,6 +51,9 @@ useEffect(() => {     anyNameFunction1()
 
     let listener =firebase.auth.onAuthStateChanged(user=>{
         user? setUserSession(user) :props.history.push('/Login')
+        if( user&&user.uid==='XwwwxAp18nZ03kCsTCM5fNXUu512'){
+            props.history.push('/espaceAdmin');
+           }
         setUserEmail(user.email)
  })
   
@@ -642,7 +645,7 @@ data={{
                                     size: 20
                                 },
                                 display: true,
-                                text: "Distribution of Satisfaction",
+                                text: "Distribution of Satisfaction (%)",
                                 padding: {
                                     top: 20,
                                     bottom: 40

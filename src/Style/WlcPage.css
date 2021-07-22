@@ -104,22 +104,22 @@ line-height: 82px;
     margin-top: -10%;
     margin-left: 16%;
 }
-.sidebar {
+/* .sidebar {
     left: 8px;
 }
 .icon i {
-    font-size: 1.3rem;}
+    font-size: 1.3rem;} */
 }
 
-@media only screen and (max-width: 500px){
+/* @media only screen and (max-width: 400px){
     .sidebar .list {
         padding-left: 1px;
         
     }
     .sidebar {
       
-        width: 51px;}
-    }
+        width: 51px;} 
+    }*/
 
 
 

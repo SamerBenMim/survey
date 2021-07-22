@@ -16,6 +16,7 @@ import bar from './Component/quizz/bar';
 import StatsInfo from './Component/StatInfo/StatsInfo';
 import Stats from './Component/Statistics/Stats';
 import Services from './Component/services/services';
+import Contactus from './Component/ContactUs/Contactus';
 function App() {
   const firebase = useContext(FirebaseContext);
   const [userSession,setUserSession] =useState(null);
@@ -36,6 +37,7 @@ function App() {
         <Route exact path = "/Statistics" component = {Stats}/>
         <Route exact path = "/InfoStats" component = {StatsInfo}/>
         <Route exact path = "/Services" component = {Services}/>
+        <Route exact path = "/ContactUs" component = {Contactus}/>
         <Route  component = {ErrorPage}/>
       </Switch>
     </BrowserRouter >

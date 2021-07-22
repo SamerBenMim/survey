@@ -57,5 +57,6 @@
     border-radius: 50%;
   }
   .logoutContainer{
-    margin-top: 40px;    margin-left: 36px;
-  }
+    position: fixed;
+    top: 130px;
+    right: 96px;  }

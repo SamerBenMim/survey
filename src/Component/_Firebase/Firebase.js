@@ -49,7 +49,11 @@ const config = {
     return this.db.collection(`${collection}`)
   };
 
+// recupere mdp
 
+passwordReset=(email)=>{
+return this.auth.sendPasswordResetEmail(email)
+}
 }/*
 export class Admin{
   constructor() {

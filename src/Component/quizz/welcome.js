@@ -9,6 +9,8 @@ import WelcomeImg from './WelcomeImg'
 import CubeQuizz from './CubeQuizz'
 import Done from './Done'
 export const Welcome = (props) => {
+    const [loading, setLoading] = useState(true);
+
     const [userSession,setUserSession] =useState(null);
     const [userData,setUserData] =useState({});
     const [userUID,setUserUID] =useState('');
@@ -31,13 +33,13 @@ export const Welcome = (props) => {
            }
            else{
                
-           }        setUserUID(user.uid)
+           }     if(user)   setUserUID(user.uid)
 
        }); 
 
        if(!!userSession){                 
            fb.adduser(userSession.uid)
-            .get()
+            .get()            
         .then(doc=>{
             if(doc&&doc.exists){
              const myData = doc.data()
@@ -46,13 +48,17 @@ export const Welcome = (props) => {
         })
         .catch(e=>alert(e))
     }
+    setTimeout(() => {
+        setLoading(false)
+        }, 900)
         return ()=>{
             listener()
         }
+       
     }, [userSession] )
 
     // console.log(userUID)
-   return userSession===null ?(<div> <Loader></Loader></div>)
+   return (userSession===null || loading) ?(<div> <Loader></Loader></div>)
 : (
             <div style={{textAlign:"center" ,margin:'auto',fontFamily:" 'Montserrat', sans-serif"}}   > 
             <div className="WlcBar">

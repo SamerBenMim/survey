@@ -1,0 +1,40 @@
+.contactImg{float: right;
+    display: inline-block;
+}
+.CusContainer{
+    font-family: sans-serif;
+    
+    width:75%;
+    display: inline-block;
+    float: right;
+    
+}
+.CusText{
+    font-size: 17px;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 25px; 
+    left:23%;
+       display: inline-block;
+}
+.contactusContianer{
+    z-index: -10;
+    position: absolute;
+    display: inline-block;
+
+}
+.middleEast{vertical-align: baseline;
+    display: inline-block;
+    margin : 0 30px;
+}
+
+.Africa{
+    margin : 0 30px;
+    vertical-align: baseline;
+    display: inline-block;
+}
+
+.europe{vertical-align: baseline;
+    display: inline-block;
+    margin : 0 30px;
+}

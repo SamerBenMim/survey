@@ -28,8 +28,9 @@ body{
 }
 
 .sidebar.active{
-    width: 300px;
+    width:300px;
 }
+
 
 .sidebar .list{
     position: absolute;
@@ -184,3 +185,76 @@ body{
 .list a {
     text-decoration: none;
 }
+
+@media only screen and (max-width: 970px){
+    .sidebar.active{
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        bottom: 20px;
+        width: 60px;
+        border-radius: 10px;
+        box-sizing: initial;
+        border-left: 5px solid #a200ca;
+        background: #a200ca;
+        transition: width 0.5s;
+        overflow-x: hidden;
+    }
+    
+    .sidebar{
+        width:300px;
+    }
+}
+@media only screen and (max-width: 420px){
+ 
+    .sidebar.active {
+   
+        width: 48px;
+        left: 7px;
+      
+    }
+    .sidebar .list {
+        width: 107%;
+       
+        left: -5px;
+        
+    }
+    .icon i {
+        font-size: 1.4rem;
+        left: 35px;
+        margin-left: -8px;
+    }
+    .sidebar .list {
+        left: -5px;
+        padding-left: 0px;
+    }
+    .sidebar .list .list-item.active {
+        margin-left: 10px;
+    }
+    .toggle{
+      
+        background: #4300ca;
+    }
+    
+    .toggle.active{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: #a200ca;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;    }
+
+
+        /* .toggle i.open, .toggle.active i.close {
+            display: block;   }
+        .toggle.active i.open, .toggle i.close {
+            display: none;
+     
+        } */
+}
+
