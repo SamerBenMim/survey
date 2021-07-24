@@ -2,6 +2,9 @@ import React, { useState,useContext } from 'react';
 import { NavLink } from 'react-router-dom'
 import {FirebaseContext} from '../_Firebase/index'
 import '../../Style/Form.css'
+import ReactNotification from 'react-notifications-component'
+import { store } from 'react-notifications-component'
+import { extractInstanceAndPath } from 'firebase-functions/lib/providers/database';
     const FormSignup = (props) => {
         const firebase = useContext(FirebaseContext);
         const data={
@@ -28,7 +31,7 @@ import '../../Style/Form.css'
         const passerror={
             user:"",
             email:'',
-            password:'Password does not mathc',
+            password:'Password does not match',
             confirmPassword:'',
 
         }
@@ -71,7 +74,11 @@ else if (password!==confirmPassword){
                 numberOfQuestions:0
               
         })
-    props.Redirection()
+success()
+        setTimeout(() => {
+            props.Redirection()
+
+        }, 1500);
     setLoginData({...data})
     
     console.log('done')
@@ -84,6 +91,9 @@ else if (password!==confirmPassword){
     })
 })*/
 .catch(e=>{ console.log(e) ;if(e.message==="The email address is badly formatted.")setError(emailerror)
+
+else if(e.message==="Password should be at least 6 characters"){shortPassword()}
+else if(e.message==="The email address is already in use by another account.") emailExist()
  else{ alert(e)  ; setError(error) ;setLoginData({...data}) } })   }
 
        }
@@ -174,10 +184,62 @@ else if (password!==confirmPassword){
           Already have an account? Login <NavLink to='/Login' href='#'>here</NavLink>
         </span>
             </form>
+            <ReactNotification />
+
             </div>
 
         )
     }
-   
+    function shortPassword( ){
+
+        store.addNotification({
+            width:600,
+        
+        title:'Error',
+        message:'Password should be at least 6 characters',
+        type : 'danger',
+        container:'top-right',
+        insert:'top',
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+            duration:2000
+        }
+            })
+        }
+    function emailExist( ){
+
+        store.addNotification({
+            width:600,
+        
+        title:'warning',
+        message:'The email address is already in use by another account.',
+        type : 'warning',
+        container:'top-right',
+        insert:'top',
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+            duration:2000
+        }
+            })
+        }
+    function success(){
+
+        store.addNotification({
+            width:600,
+        
+        title:'success',
+        message:'account created successfully !',
+        type : 'success',
+        container:'top-right',
+        insert:'top',
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+            duration:2000
+        }
+            })
+        }
 
 export default FormSignup

@@ -23,9 +23,18 @@ margin-right: 87px;
 
 @media only screen and (max-width:500px){
 .reset{
-    margin-left: 52px;
+}
+.boxReset{
+    padding: 42px;
 }
 .key {
     
     margin-top: -60px;
-}}
+}
+
+.keycontainer {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+}

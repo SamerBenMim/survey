@@ -185,10 +185,10 @@ const  SendToResults = () => {
 return (
         <div className='QuizzBox'
           >
-
+{/**Excepteur dolor sint ullamco sint consequat ullamco ea.Et est anim id minim fugiat magna eu excepteur sit anim in occaecat et.Anim exercitation culpa exercitation proident aliqua culpa nulla anim adipisicing excepteur ut nisi laboris. */}
             <div className="QuizzBoxContainer ">
                 <div className="ShowHide display">
-            <div className="Question"><p>Excepteur dolor sint ullamco sint consequat ullamco ea.Et est anim id minim fugiat magna eu excepteur sit anim in occaecat et.Anim exercitation culpa exercitation proident aliqua culpa nulla anim adipisicing excepteur ut nisi laboris.</p></div>
+            <div className="Question"><p>{currentQuestion}</p></div>
 
 <div className="proposision">
     <div className="blkQ1">

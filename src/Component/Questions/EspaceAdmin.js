@@ -495,11 +495,11 @@ if(isAdmin)
                  <div>                 <p> <span>Important !</span> :Ea magna exercitation esse ea quis sunt officia minim magna cupidatat laborisEa magna exercitation esse ea quis sunt officia minim magna cupidatat laboris.Ea magna exercitation esse ea quis sunt officia minim magna cupidatat laboris. Ea magna exercitation esse ea quis sunt officia minim magna cupidatat laboris.</p>
                 </div>
 
-                <div style={{display: "inline-flex"}}>
+                <div style={{display: "inline-flex",width:'    100%'}}>
 
 
                 
-<div style={{marginLeft: '-470px'}}>
+<div style={{marginLeft: '-50'}}>
 <input  autoComplete='off' 
                  onChange={e=>{
                    setDeletedQuestion(e.target.value)
@@ -513,7 +513,8 @@ if(isAdmin)
 
 </div>
 <div style={{display:"flex" ,color:'white'     ,marginLeft: '134px'
-    ,marginTop : '21px'}} > <div style={{marginRight:'20px' ,fontSize:'25px'}} >{listIds} </div><div style={{fontSize:'25px'}}>{listQuestions}</div></div>
+    ,marginTop : '21px'}} > <div style={{marginRight:'20px' ,fontSize:'25px'}} >{listIds} </div><div style={{fontSize:'15',    textAlign: 'initial',
+    width: '878px',lineHeight:"28px"}}>{listQuestions}</div></div>
 
 </div>    
 

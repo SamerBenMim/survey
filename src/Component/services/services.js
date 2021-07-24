@@ -39,7 +39,7 @@ var ok=true
             <img src={key} alt = 'key' className="key"/> 
             </div>
             <div className="external-box  reset">
-                <form onSubmit={handleSubmit} className="box-container">
+                <form onSubmit={handleSubmit} className="box-container boxReset">
                 <div id="container">
                     
                  <h1>Forgot Password?</h1>
@@ -69,7 +69,7 @@ function successNotif( ){
         width:600,
     
     title:'Success',
-    message:'New Question added',
+    message:'An email has been sent to you',
     type : 'success',
     container:'top-right',
     insert:'top',

@@ -3,6 +3,8 @@ import '../../Style/Responsive.css'
 import '../../Style/LoginStyle.css'
 import { NavLink } from 'react-router-dom'
 import {FirebaseContext} from '../_Firebase/index'
+import ReactNotification from 'react-notifications-component'
+import { store } from 'react-notifications-component'
 import { Admin } from '../_Firebase/Firebase'
 const LoginBox=(props)=> {
    const firebase = useContext(FirebaseContext)
@@ -14,14 +16,18 @@ const handleSubmit = e => {
     firebase.loginUser(email,password).then(user=>{ props.Redirection()
     setEmail('');
     setPassword('');
-    }).catch(e=>{
-        alert(e)
-    }
+    }).catch(e=> {err()}
+        
+        // e=>{
+        //   }
     )
 }
     useEffect(()=>{})
-        return (
+        return (<>
+            <ReactNotification />
+
             <div className="external-box">
+
                 <form onSubmit={handleSubmit} className="box-container">
                 <div id="container">
                     
@@ -40,11 +46,29 @@ const handleSubmit = e => {
  <NavLink to='/Services' href='#'> here</NavLink>
         </p>
                 </form>  
-            
+
             </div>
+            </>
         )
      
 }
+
+function err(){
+    store.addNotification({
+        width:600,
+    
+    title:'warning',
+    message:'There is no user record corresponding to this identifier. The user may have been deleted.',
+    type : 'warning',
+    container:'top-left',
+    insert:'top',
+    animationIn: ["animate__animated", "animate__fadeIn"],
+    animationOut: ["animate__animated", "animate__fadeOut"],
+    dismiss: {
+        duration:2000
+    }
+        })
+    }
 export default LoginBox
 
 

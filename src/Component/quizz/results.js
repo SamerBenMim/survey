@@ -63,7 +63,7 @@ useEffect(() => {     anyNameFunction1()
     .then(element=> {
       element.forEach(doc=>{ 
         const data =doc.data()
-        if(data.email === userEmail){
+        if(data.email === (userEmail)){
             console.log("data",data.numberOfQuestions)
            
             const loadContent = ()=>{ 

@@ -511,8 +511,8 @@ if(userSession&& !loading)
 <div>
   <h1 style={{  'color': '#848484',
         'lineHeight': '50px',"fontFamily":'sans-serif'}}>Anticipation</h1>
-  <div id="cercle" style={{'background': '#2690ce85'}}><div style={{'marginTop': '34px'}}><p style={{"fontSize":"37px"}}>{((dispertion[9]+dispertion[8]+dispertion[7]+dispertion[6])/(dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4]+dispertion[5]+dispertion[6]+dispertion[7]+dispertion[8]+dispertion[9])).toFixed(2)}%</p>of employees whould resign from their job and search for new opportunities</div></div>
-  <div id="cercle" style={{'background': '#ff492c75'}}><div style={{'marginTop': '34px'}}><p style={{"fontSize":"37px"}}>{((dispertion[0]+dispertion[1]+dispertion[2])/(dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4]+dispertion[5]+dispertion[6]+dispertion[7]+dispertion[8]+dispertion[9])).toFixed(2)}%</p>of employees whould resign from their job and search for new opportunities</div></div>
+  <div id="cercle" style={{'background': '#2690ce85'}}><div style={{'marginTop': '34px'}}><p style={{"fontSize":"37px"}}>{(100*(dispertion[9]+dispertion[8]+dispertion[7]+dispertion[6] -2)/(dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4]+dispertion[5]+dispertion[6]+dispertion[7]+dispertion[8]+dispertion[9])).toFixed(1)}%</p>of employees whould never leave their jobs and search for other opportunities</div></div>
+  <div id="cercle" style={{'background': '#ff492c75'}}><div style={{'marginTop': '34px'}}><p style={{"fontSize":"37px"}}>{(100*(dispertion[0]+dispertion[1]+dispertion[2])/(dispertion[0]+dispertion[1]+dispertion[2]+dispertion[3]+dispertion[4]+dispertion[5]+dispertion[6]+dispertion[7]+dispertion[8]+dispertion[9])).toFixed(1)}%</p>of employees whould resign from their job and search for new opportunities</div></div>
 </div>
 </div>
 
