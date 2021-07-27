@@ -1,0 +1,242 @@
+.doughnutContainer{
+    height: 455px;
+    margin: auto;
+    margin-top:10px;
+    margin-left: 340px;
+}
+.PieContainer1{
+    height: 415px;
+    margin: auto;
+    margin-top: -42px;
+    margin-left: 340px;
+    margin-bottom: 10px;
+
+}
+.bargraphContainer{
+    height: 415px;
+    margin: auto;
+    margin-top: -42px;
+    margin-left: 340px;
+}
+.Scatter{   height: 415px;
+    margin: auto;
+    margin-top: -42px;
+    margin-left: 340px;}
+    .interpretationContainer{
+        display: inline-block;
+        width: 63%;
+        margin-bottom: 50px;
+        line-height: 25px;
+    }
+    .interpretationContainer h1{
+        color: #848484;
+        line-height: 50px;
+
+    }
+   
+    .statsimg{
+        margin: auto;
+        display: inline-block;
+        /* margin-right: 320px; */
+        display: inline-block;
+        /* float: right; */
+        position: absolute;
+        right: 150px;
+    }
+    .analytics{
+        font-family: sans-serif;
+        margin: auto;
+        margin-left: 450px;
+        display: inline-block;
+        font-size: 18px;
+    }
+    .statimg{
+        vertical-align: middle;
+
+        width:255px;
+        margin-right: 0px;
+    }
+    .jobRisk{
+        height: 415px;
+        margin: auto;
+        margin-top: 0;
+        margin-left: 413px;
+        /* margin-bottom: 10px; */
+        text-align: center;
+    }
+    #cercle {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        border-radius: 100%;
+        overflow: hidden;
+        color: white;
+        display: inline-block;
+        font-size: 21px;
+    }
+    @media only screen and (max-width: 970px){
+        .doughnutContainer {
+                
+               
+            margin-left: 113px;            width: 80vw;
+        }
+        .PieContainer1{
+                
+               
+            margin-left: 100px;            width: 80vw;
+        }
+        .bargraphContainer{
+                
+               
+            margin-left: 113px;            width: 80vw;
+        }
+        .Scatter{
+                
+                
+            margin-left: 10%;            width: 90vw;
+        }
+        .jobRisk{
+                
+               
+            margin-left: 100px;            width: 80vw;
+        }
+        .analytics{
+                
+               
+            margin-left: 16%;          width: 80vw;
+        }
+        .GloabalPie{
+            
+            margin-left: 100px;      
+        }
+        .blockPie{
+      
+    
+            margin: auto;
+            margin-left: 100px;        }
+    
+    
+    
+           
+            .blockPieContainer h1 {
+             
+                margin-left: 100px;
+             
+            }
+    }
+   
+    @media only screen and (max-width: 1348px){
+        .statimg {
+            vertical-align: unset;
+          
+        }
+        .statsimg {
+             margin-right: 0; 
+            float: unset;
+            position: initial;
+        }
+    }
+    @media only screen and (max-width: 1181px){
+        .statimg {
+            margin-left: 39%;
+            vertical-align: unset;
+            margin-top: 45px;
+        }
+        .statsimg {
+             margin-right: 0; 
+            float: unset;
+            position: initial;
+            text-align: center;
+                width: 100%;
+                margin: auto;
+        }
+        .analytics {
+            text-align: center;
+            margin-left: 46%;
+        }
+    }
+    
+
+    @media only screen and (max-width: 950px){
+        .analytics {
+            text-align: center;
+            margin-left: 16%;
+        }
+        .statimg {
+            margin-left: 10%;
+        }
+    }
+
+    @media only screen and (max-width: 693px){
+        .doughnutContainer {
+                
+               
+            margin-left: 100px;            width: 80vw;
+        }
+        .PieContainer1{
+                
+               
+            margin-top: 15px;
+                 }
+        .bargraphContainer{
+                
+               
+            margin-left: 70px;          }
+        .Scatter{
+                
+               
+            margin-left: 70px;          }
+        .jobRisk{
+                
+               
+            margin-left: 70px;          }
+        .analytics{
+                
+               
+            margin-left: 70px;          }
+        .GloabalPie{
+            
+            margin-left: 70px;          }
+        .blockPie{
+      
+    
+            margin: auto;
+            margin-left: 70px;         }
+    
+    
+    
+           
+            .blockPieContainer h1 {
+             
+                margin-left: 70px;               
+            }
+    }
+
+
+    @media only screen and (max-width:500px){
+        .statimg {
+            margin-left: 29%;
+        }
+        .PieContainer1 {
+            margin-left: 56px;
+                }
+        .doughnutContainer {
+            margin-left: 62px;            margin-top: -15px;        }
+        .bargraphContainer {
+            margin-left: 56px;
+                        margin-top: 14px;        }
+                        .Scatter {
+                            width: 108%;
+                            margin-left: 13px;
+                        }
+            .analytics {
+                margin-left: 29%;
+                font-size: 20px;
+            }
+            .statimg {
+                margin-left: 32%;
+               
+            }
+            .jobRisk {
+                margin-left: 59px;            }
+    }

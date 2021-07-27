@@ -1,0 +1,139 @@
+
+.box-container h1 {
+    color:#82e9ff;
+    font-family: sans-serif;
+}
+
+  
+
+.input1 {
+    margin: 28px auto;
+    border:0;
+    background: none;
+    display: block;
+    border:2px solid #3498ad;
+    padding: 14px 10px;
+    width : 200px;
+    outline:none;
+    color:white;
+    border-radius:50px 15px ;
+    transition:0.25s;
+    text-align: center;
+}
+.input2:focus {
+width:280px;
+border-color:#d9bcfd ;
+}
+.input2 {
+    margin: 28px auto;
+    border:0;
+    background: none;
+    display: block;
+    border:2px solid #3498ad;
+    padding: 14px 10px;
+    width : 200px;
+    outline:none;
+    color:white;
+    border-radius:50px 15px ;
+    transition:0.25s;
+    text-align: center;
+}
+.input1:focus {
+width:280px;
+border-color:#91f9e7 ;
+}
+/*.box input [type = "password"] */
+.submit{
+    cursor: pointer;
+    border: 2px solid;
+    background: none;
+    display: block;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 50px 15px;
+    transition: 0.25s;
+    margin: auto;
+    width: 140px;
+}
+.submit:hover{
+    color: #255784;
+    background: #32b5e7;
+    box-shadow: 0 0 40px #0c0cfc, 0 0 30px blue;
+    transition-delay: 0.25s;
+}
+/* .input:hover{
+    color:#255784;
+background :#2ecc71;
+box-shadow:0 0 40px green ,0 0 30px green ;
+transition-delay: 0.25s;
+} */
+.imag{
+    width: 100%;
+    z-index: -2;
+    float: left;
+    margin-top: 10%;
+}
+.Container {
+    display: flex;
+}
+#container{
+    margin-bottom: 60px;
+    margin-top: 60px;}
+    .external-box{
+        margin: auto;
+        margin-right: 221px;
+    }
+    .box-container{
+        width: 300px;
+        padding: 40px;
+        text-align: center;
+        border-radius: 50px 15px;
+        /* margin-left: -75px; */
+        background: #3f3d56;
+        margin-top: -20px;
+        height: auto;
+    }
+
+
+    @media only screen and (max-width: 1306px){
+       
+        .box-container{
+            overflow-x: hidden;
+            margin-top: 35px;
+            padding: 12px;
+            margin-bottom: 35px;
+        }       
+        
+    }
+@media only screen and (max-width: 1092px){
+    .Container {
+    display: flex;
+    flex-direction: column;
+}
+.external-box {
+    margin: auto;
+    margin-bottom: 80px
+}
+}
+
+@media only screen and (max-width: 400px){
+    
+    .box-container{
+    margin-top: 50px;
+        padding: 0px;
+    }       
+    .input1 { width: 175px;
+    }
+    .input2 { width: 175px;
+    }
+    .submit{
+        width: 125px;
+    }
+    .input1:focus {     width: 230px;
+
+    }
+    .input2:focus {     width: 230px;
+
+    }
+}

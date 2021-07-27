@@ -1,0 +1,50 @@
+
+ .reset {
+    display: inline-block;
+}
+.keycontainer{
+display: inline-block;
+margin-right: 87px;
+}
+.key {
+vertical-align: middle;
+width: 400px;
+margin-top: -255px;
+}
+.resetContainer {
+width: 75%;
+display: inline-block;
+text-align: center;
+float: right;
+margin-top: 150px;
+
+}
+
+
+
+@media only screen and (max-width:500px){
+.reset{
+}
+.boxReset{
+    margin-top: 10px;}
+.key {
+    margin-left: 76px;
+    width: 259px;
+    margin-top: -60px;
+}
+
+.keycontainer {
+    display: inline-block;
+    margin-right: 25px;
+}
+.boxReset{margin-left: 7px;
+    width: 288px;
+}
+.reset {
+    margin-left: 58px;
+}
+.resetContainer {
+   
+    float: none;
+}
+}

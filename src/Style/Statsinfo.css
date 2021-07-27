@@ -1,0 +1,42 @@
+.jobSatisfactionContainer{
+    width: 80%;
+    float :right;
+    text-align: center;
+}
+.JobSatisImg {
+    width: 37%;
+    margin-top: 45px;
+}
+
+.statsInfoText {
+    width: 64vw;
+    text-align: center;
+    margin: auto;
+    font-size: 21px;
+    font-family: sans-serif;
+    margin-bottom: 80px;
+}
+.statsInfoText h1{
+    margin-bottom: 15px;
+    margin-top: 25px;
+
+}
+
+@media only screen and (max-width: 971px){
+
+.jobSatisfactionContainer {
+    width: 91%;}
+
+    .JobSatisImg {
+        width: 69%;
+        margin-top: 98px;
+    }
+    .statsInfoText{
+        width: 67.9vw;
+        font-size: 19px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+
+}

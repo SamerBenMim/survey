@@ -1,0 +1,28 @@
+.loader{
+    margin: auto;
+    margin-top: 28vh;
+    margin-bottom: 40px; 
+    width: 13%;
+    animation: spin 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes spin{
+    100% { -webkit-transform: rotate(360);}
+}
+
+/* @-moz-keyframes spin{
+    100% { -webkit-transform: rotate(360);}
+}
+
+@keyframes spin{
+    100% { -webkit-transform: rotate(360);}
+} */
+
+
+
+
+@media only screen and (max-width: 1000px){
+    .loader {
+        width: 35%;
+    }
+}

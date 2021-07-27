@@ -1,0 +1,358 @@
+.WlcImg{
+    width: 402px;
+}
+.userName{
+    margin-left: 166px;
+    margin-top: -94px;
+    color: #ffffff;
+    size: 50%;
+    font-size:75px;
+    text-shadow: -5px 1px 20px black;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    -webkit-text-stroke-width: 1px;
+}
+.Question{
+    width: 57vw;
+    height: 200px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    margin: auto;
+    margin-top: 48px;
+    margin-bottom: 25px;
+    margin-inline: 177px;
+    border: solid 1px #a900ff;
+    display: table-cell;
+    vertical-align: middle;
+
+}
+.Question p{
+    max-width: 50vw;
+    margin: auto;
+    font-size: 20px;
+}
+.proposision{
+    margin: auto;
+    display: grid;
+}
+.blkQ1{display: flex;
+margin: auto;
+line-height: 82px;
+}
+.blkQ2{display: flex;
+    margin: auto;
+    line-height: 82px;
+    }
+
+.prop1{
+    background-color: #fcdaca;
+    width: 27vw;
+    height: 90px;
+    border-radius: 20px;
+    margin: 14px;
+    cursor: pointer;
+}
+.prop2{
+    background-color: #fcdaca;
+    width: 27vw;
+    height: 90px;
+    border-radius: 20px;
+    margin: 14px;
+    cursor: pointer;
+}
+.prop3{
+    background-color: #fcdaca;
+    width: 27vw;
+    height: 90px;
+    border-radius: 20px;
+    margin: 14px;
+    cursor: pointer;
+}
+.prop4{
+    background-color: #fcdaca;
+    width: 27vw;
+    height: 90px;
+    border-radius: 20px;
+    margin: 14px;
+    cursor: pointer;
+}
+
+.QuizzBox{
+    display: inline-flex;
+    margin-left: 38px;}
+
+ .Rightbar{
+    border-radius: 18px;
+    width: 275px;
+    height: 531px;
+        background-color: #a200ca;
+        position: fixed;
+            right: 18px;
+    margin-top: 42px;
+}
+.RightBarImg{
+    width: 200px;
+
+}
+@media only screen and (max-width: 1000px){
+.WlcImg{
+    width: 50%;
+    margin-left: 30px;
+    margin-top: 12px;
+}
+.userName{
+    font-size: 7vw;
+    margin-top: -10%;
+    margin-left: 16%;
+}
+/* .sidebar {
+    left: 8px;
+}
+.icon i {
+    font-size: 1.3rem;} */
+}
+
+/* @media only screen and (max-width: 400px){
+    .sidebar .list {
+        padding-left: 1px;
+        
+    }
+    .sidebar {
+      
+        width: 51px;} 
+    }*/
+
+
+
+    .button {
+        overflow: hidden;
+        position: relative;
+     
+        background-color: #fcdaca;
+        display: table-cell;
+        vertical-align: middle;
+
+       
+    }
+    .circle {
+        z-index: 1;
+        height: 200%;
+        background-color: rgb(4, 212, 39);
+        /* border-radius: 100px; */
+        top: -10px;
+        left: -50px;
+        transition: height .5s ease-out,width .5s ease-out;
+        position: absolute;
+        width: 0;
+    }
+    .button h3 {
+        transition: color .5s ease-in-out;
+        position: relative;
+        z-index: 2;
+        font-weight: 400!important;
+        font-size: 27px;
+        
+    }
+    
+    
+    .button:hover > .circle {
+        height: 200%;
+        width: 200%;
+        transition: width 2s ease-out
+    }.button:hover > h3 {
+        color: #ffffff!important;
+    }
+    .QuizzBoxContainer{
+     
+            margin-top: 44px;
+        
+    }
+    .shadow{
+        width: 14vw;
+        opacity: 33%;
+        margin: auto;
+        display: block;
+
+
+    padding-left: 40px;
+
+    }
+    .cubeContainer{
+        margin-top: 158px;
+    }
+    .cubeInnerContainer{
+        margin-bottom: 20px;
+    }
+
+    .cube {
+        cursor: pointer;
+    border-radius: 30px;
+    transform: translateY(0);
+    animation: float 3.5s ease-in-out infinite;
+    
+    }
+    @keyframes float {
+        0%{
+            transform: translateY(0px);
+    
+        }
+        50%{
+            transform: translateY(-115px);
+    
+        }
+        100%{
+            transform: translateY(0px);
+    
+        }
+    }
+    .display{
+        display: none;
+    }
+    .startQuiz{
+        display: inline-grid;
+        font-size: 17px;
+    }
+    .startQuiz h1{
+        font-size: 17px;
+        letter-spacing: 8px;
+    }
+    .doneContainer{
+        width: 27vw;
+        height: 518px;
+        background-color: #f3e7f9;
+        margin: auto;
+        border-radius: 20px;
+    }
+    .doneImg{
+        width: 7vw;
+        margin-top: 80px;
+      }    
+      .doneContainer h1{
+        margin-bottom: 10px;
+    }
+    .buttondone {
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        background-color: initial;
+        padding: 21px;
+        border-radius: 33px;
+        margin: auto;
+        /* border: 1px solid #22c365; */
+        width: 13vw;
+        background-color: #22c365;
+        margin-top: 29px;
+    }
+    .circledone {
+        z-index: 1;
+        height: 57%;
+        background-color: #fff;
+        border-radius: 100px;
+        top: -10px;
+        left: -50px;
+        transition: height .5s ease-out,width .75s ease-out;
+        position: absolute;
+        width: 0;
+    }
+    .buttondone h3 {
+        transition: color .75s ease-out;
+        position: relative;
+        z-index: 2;
+        font-weight: 402!important;
+    }
+    
+    
+    .buttondone:hover > .circledone {
+        height: 500%;
+        width: 200%;
+    }.buttondone:hover > h3 {
+        color: #7cdc9f!important;
+    }
+    @media only screen and (max-width: 1181px){
+        
+    .Rightbar{
+      display: none;
+    }
+    .logoutContainer {
+        position: initial;
+        top: 619px;
+        /* right: 187px; */
+        /* width: -webkit-fill-available; */
+        /* width: 91%; */
+        /* right: -9px; */
+        margin-left: 43px;
+    }
+    }
+    @media only screen and (max-width: 550px){
+        
+     
+        .startQuiz h1 {
+            margin-top: 40px;
+            width: 57vw;
+            }
+            .cube {
+            
+                width: 170px;
+                
+            }
+            .shadow {
+                width: 21vw;
+                opacity: 33%;
+                margin: auto;
+                display: block;
+                padding-left: 8px;
+            }
+            .ShowHide{
+                margin: auto;
+            }
+            .QuizzBoxContainer {
+                margin: auto;
+    margin-top: 38px;
+            }
+            .Question {
+                width: 78vw;
+            }
+                .cubeContainer {
+                    margin-left: -11vw;
+                    margin-top: 158px;
+                }
+                .QuizzBox {
+                    display: inline-flex;
+                    margin-left: 16%;
+                }
+                .blkQ1 {
+                    
+                    flex-direction: column;
+                }
+                .blkQ2 {
+                    
+                    flex-direction: column;
+                }
+                .prop1 {
+                    width: 70vw;
+                }
+                .prop2 {
+                    width: 70vw;
+                }
+                .prop4 {
+                    width: 70vw;
+                }
+                .prop3 {
+                    width: 70vw;
+                }
+                .Question p {
+                    max-width: 76vw;
+                    margin: auto;
+                    font-size: 16px;
+                }
+                .button h3 {
+                   
+                    font-size: 17px;
+                }
+                .proposision {
+                   
+                    margin-bottom: 81px;
+                }
+        }
+
+
+    
