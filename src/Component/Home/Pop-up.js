@@ -19,13 +19,28 @@ import '../../Style/Popup.css'
             props.myState.open = ! props.myState.open}  } >
             <div  
              className = 'PopupStyle' >
-            <p >Lorem ipsum fugiat ad mollit ad esse exercitation nulla ex qui sunt proident voluptate pariatur. Sunt irure duis aliqua labore qui laborum aliquip officia dolore irure ullamco laboris amet elit. Amet ea deserunt nisi occaecat sint elit consequat officia dolore est culpa sint. Ad Lorem irure eiusmod in irure aliquip voluptate commodo sint ad non.Eu non labore ex nisi incididunt dolore elit nostrud ex tempor laboris. Adipisicing consequat est consequat cupidatat commodo et est consequat dolore culpa id adipisicing sunt. Anim dolor nostrud ad magna culpa dolore tempor. Cillum anim qui velit dolore qui pariatur esse enim incididunt veniam. Deserunt ex dolore minim consequat in incididunt incididunt officia laborum ullamco voluptate elit est velit. Veniam incididunt incididunt occaecat amet cillum veniam tempor dolore.
+            <p >
 
-Elit mollit incididunt fugiat esse enim aliquip. Fugiat deserunt amet velit ex proident eiusmod veniam cillum veniam qui Lorem qui aliqua ullamco. Minim exercitation consequat esse esse duis anim. Deserunt consectetur et Lorem mollit magna amet mollit sint Lorem ut aute qui in aliqua.
+{/* For Employees: Job satisfaction from an employee perspective is to earn a good gross salary, have job stability, have a steady career growth, get rewards & recognition and constantly have new opportunities.
 
-Nulla duis ipsum ea pariatur et in aliqua fugiat eu proident velit labore. Incididunt sunt id officia elit quis labore incididunt non ad irure qui aliquip. Proident exercitation do minim irure enim mollit.
+For Employers: For an employer, job satisfaction for an employee is an important aspect to get the best out of them. A satisfied employee always contributes more to the company, helps control attrition & helps the company grow. Employers needs to ensure a good job description to attract employees and constantly give opportunities to individuals to learn and grow. */}
 
-Amet nostrud quis deserunt duis duis non qui exercitation in exercitation. Sit officia anim elit culpa enim adipisicing velit consequat et ad irure. Velit sint qui velit sunt officia incididunt id aliquip velit cupidatat dolore. Aute dolor nostrud adipisicing sunt exercitation ex. Cupidatat nulla labore irure minim veniam ullamco exercitation magna eu amet. Aliquip reprehenderit ad in et occaecat nulla pariatur elit anim consectetur consectetur id velit Lorem. Eu veniam voluptate do nostrud occaecat do do nostrud nisi anim.</p>
+{/* The positive effects of job satisfaction include:
+ More efficiency of employees of workplace if they are satisfied with their job./
+Higher employee loyalty leading to more commitment./
+Job satisfaction of employees eventually results in higher profits for companies./
+ High employee retention is possible if employees are happy.<br></br>
+ It’s an important question to ask yourself fairly regularly: are you satisfied with your job? */}
+
+It can be a daunting question, especially if you suspect your answer to be ‘no.’ However, being honest with yourself about your job satisfaction allows for potential growth and an ultimately more satisfying job experience. If your answer is ‘no,’ you can work toward making a difference for yourself.
+
+You may be unsatisfied for a number of reasons. Maybe you have gone as far as you can within the company you currently work for, or maybe you are not being challenged enough in your current position. Not being able to see a future that encourages growth will likely lead to an overall feeling of dissatisfaction.
+
+Other factors that may impact your satisfaction include pay, work environment, or the work itself. Overall, if you feel as though you are not getting as much out of your job as you are putting in, you may feel dissatisfied.
+
+When it comes to evaluating your job satisfaction and the reason for any dissatisfaction, it is important to be honest with yourself so as to determine your next steps. If your dissatisfaction boils down to the work you are doing, exploring alternative job opportunities is the most advantageous to you. If your issues lie with the company you are working for, having a frank conversation with your boss will help you the most.
+A satisfied employee is always important for an organization as he/she aims to deliver the best of their capability. Every employee wants a strong career growth and work life balance at workplace. If an employee feels happy with their company & work, they look to give back to the company with all their efforts. Importance of job satisfaction can be seen from two perspectives i.e. from employee and employer perspective.
+.</p>
             </div>   
             </div>
         )

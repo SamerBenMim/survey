@@ -40,7 +40,7 @@ else
                 <ul> 
                     <NavLink to="/" exact activeClassName="activeLink" onMouseEnter={this.changeColor} onMouseLeave={this.changeColor} className={this.state.li}>Home</NavLink>
                     <NavLink  to="/SignUp" exact fn={this.change} activeClassName="dark-activeLink"  onMouseEnter={this.changeColor} onMouseLeave={this.changeColor} className={this.state.li} onClick={this.change}>Sign Up</NavLink>
-                    <NavLink to="/AboutUs" exact activeClassName="activeLink" className={this.state.li} activeClassName="activeLink" onMouseEnter={this.changeColor} onMouseLeave={this.changeColor}>About US</NavLink>
+                    <NavLink to="/AboutUs" exact activeClassName="activeLink" className={this.state.li} activeClassName="dark-activeLink" onMouseEnter={this.changeColor} onMouseLeave={this.changeColor}>About US</NavLink>
                     <NavLink className={this.state.li}to="/Login" exact><span className="bouton" ><div className="circleAnim"></div><h3>Login</h3></span></NavLink>
                 </ul>
             </div>

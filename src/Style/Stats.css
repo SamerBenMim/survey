@@ -24,7 +24,7 @@
     margin-left: 340px;}
     .interpretationContainer{
         display: inline-block;
-        width: 100%;
+        width: 63%;
         margin-bottom: 50px;
         line-height: 25px;
     }
@@ -218,17 +218,17 @@
             margin-left: 29%;
         }
         .PieContainer1 {
-            margin-left: 98px;        }
+            margin-left: 56px;
+                }
         .doughnutContainer {
-            margin-left: 100px;
-            margin-top: -15px;        }
+            margin-left: 62px;            margin-top: -15px;        }
         .bargraphContainer {
-            margin-left: 96px;
-            margin-top: 14px;        }
-            .Scatter {
-                width: 110%;
-                margin-left: 47px;
-            }
+            margin-left: 56px;
+                        margin-top: 14px;        }
+                        .Scatter {
+                            width: 108%;
+                            margin-left: 13px;
+                        }
             .analytics {
                 margin-left: 29%;
                 font-size: 20px;
@@ -238,6 +238,5 @@
                
             }
             .jobRisk {
-                margin-left: 99px;
-            }
+                margin-left: 59px;            }
     }

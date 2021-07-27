@@ -1,34 +1,35 @@
 
-    .reset {
-        display: inline-block;
-    }
+ .reset {
+    display: inline-block;
+}
 .keycontainer{
 display: inline-block;
 margin-right: 87px;
 }
 .key {
-    vertical-align: middle;
-    width: 400px;
-    margin-top: -255px;
+vertical-align: middle;
+width: 400px;
+margin-top: -255px;
 }
 .resetContainer {
-    width: 75%;
-    display: inline-block;
-    text-align: center;
-    float: right;
-    margin-top: 150px;
+width: 75%;
+display: inline-block;
+text-align: center;
+float: right;
+margin-top: 150px;
 
 }
+
 
 
 @media only screen and (max-width:500px){
 .reset{
 }
 .boxReset{
-    padding: 42px;
-}
+    margin-top: 10px;}
 .key {
-    
+    margin-left: 76px;
+    width: 259px;
     margin-top: -60px;
 }
 
@@ -36,5 +37,14 @@ margin-right: 87px;
     display: inline-block;
     margin-right: 25px;
 }
-
+.boxReset{margin-left: 7px;
+    width: 288px;
+}
+.reset {
+    margin-left: 58px;
+}
+.resetContainer {
+   
+    float: none;
+}
 }

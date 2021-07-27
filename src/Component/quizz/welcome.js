@@ -50,7 +50,7 @@ export const Welcome = (props) => {
     }
     setTimeout(() => {
         setLoading(false)
-        }, 1000)
+        }, 1450)
         return ()=>{
             listener()
         }

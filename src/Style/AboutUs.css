@@ -1,0 +1,57 @@
+
+  .AboutUsimag {
+    width: 46vw;
+    z-index: -2;
+    float: right;
+    margin-top: 20%;
+}
+
+.ContainerAboutUs{
+    margin-right: 138px;
+
+}
+.ContainerAboutUs {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.MyTextContainer {
+    text-align: justify;
+    margin: auto;
+    margin-top: 146px;
+    width: 62%;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-left: 145px;
+    line-height: 30px;
+}
+.MyTextContainer h1{
+    margin-bottom: 55px;
+}
+    @media only screen and (max-width: 1092px){
+        .ContainerAboutUs{
+            margin-right: 0;
+        
+        }
+        .ContainerAboutUs {
+        display: flex;
+        flex-direction: column;
+    }
+    .AboutUsimag {
+        width: 100%;
+        margin-top: 9%;
+    }
+    .MyTextContainer {
+        text-align: justify;
+        margin: auto;
+        margin-top: 37px;
+        width: 80%;
+        font-size: 20px;
+        font-family: sans-serif;
+        line-height: 30px;
+    }
+    .MyTextContainer h1 {
+        margin-bottom: 34px;
+        text-align: center;
+    }
+}
+

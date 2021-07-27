@@ -37,7 +37,8 @@ export class Text extends Component {
                 {//Aim of this questionnaire is to study determinants and their effects on work and personal life​ ...
 
                 }
-                <p >Veniam nisi occaecat ad non ex aliquip ea incididunt irure labore laborum. Incididunt veniam consectetur elit ullamco ipsum pariatur aliquip nisi voluptate laboris non aliqua. Irure ex est deserunt nostrud sunt officia sit ipsum consectetur consequat proident cillum consequat pariatur.</p>
+                <p > Being satisfied with your work is extremely important. If we don’t like our job or if we are not satisfied with some segments of our work, such as the working atmosphere, people with whom we work, etc., that dissatisfaction can have a strong negative effect on our personal life.</p>
+               
                 <div  >
                 <button  onClick={this.props.methode}  style= {{ cursor:"pointer", backgroundColor: this.state.color}} onMouseEnter={this.changeColor} onMouseLeave={this.changeColor}>Read More</button>
                 <div className="GOnow"><img src={go} alt ="go" className="go" />

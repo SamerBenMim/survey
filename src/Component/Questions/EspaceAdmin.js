@@ -236,24 +236,30 @@ const listQuestions = monQuestion.map((q) =>
 
 
 if(isAdmin)
-    return (
-      
-        <div style={{background:'#2a2b33',height: 'auto'}}> 
-         <ReactNotification />
+if(window.screen.width>1350)
+    return (<>
+      <ReactNotification />
+
+        <div style={{background:'#2a2b33',height: 'auto',minWidth: 'maxContent',
+        height: '100%',    minWidth: 'max-content',
+        background:' rgb(42, 43, 51)',
+        /* height: auto; */
+        maxHeight: 'fit-content',
+        width: '100%'}}> 
         <div className="topnav"><img src={admin} alt = 'admin' className="admin"/> 
         <h1>Welcome Admin
 
         <h2>In this page you can add, delete or modify any question in the survey</h2>
         </h1>
         <div>
-        <p className='stats' style={{textAlign:'left' }}> Number of questions : {nbrOfQuestion} </p>
-        <p className='stats' style={{textAlign:'left'}}> Number of participants : {nbrOfUSers} </p>
+        <p className='stats' style={{textAlign:'left' }}> Number of questions : {nbrOfQuestion} </p> 
+         <p className='stats' style={{textAlign:'left'}}> Number of participants : {nbrOfUSers} </p>
         </div>
         
         </div>
 
               
-               <div>
+        <div>
                <form onSubmit={handleSubmit} className="admin-box-container">
                  {/*question/*/}
                  <h1>Add Questions</h1>
@@ -486,16 +492,14 @@ if(isAdmin)
                  <input  className="submit"type = "submit" value = "ADD" name=""></input>
 
                 </form>
-            </div >
-       
-                <div style={{    height: '700px'}}>
+            </div >       
+               <div style={{    height: '700px'}}>
                 <form onSubmit={deletehandleSubmit} style={{marginTop:'80px'}} className="admin-box-container">
-                 {/*question/*/}
                  <h1>Delete a Question</h1>
                  <div>                 <p> <span>Important !</span> :Ea magna exercitation esse ea quis sunt officia minim magna cupidatat laborisEa magna exercitation esse ea quis sunt officia minim magna cupidatat laboris.Ea magna exercitation esse ea quis sunt officia minim magna cupidatat laboris. Ea magna exercitation esse ea quis sunt officia minim magna cupidatat laboris.</p>
                 </div>
 
-                <div style={{display: "inline-flex",width:'    100%'}}>
+                 <div style={{display: "inline-flex",width:'    100%'}}>
 
 
                 
@@ -516,17 +520,24 @@ if(isAdmin)
     ,marginTop : '21px'}} > <div style={{marginRight:'20px' ,fontSize:'25px'}} >{listIds} </div><div style={{fontSize:'15',    textAlign: 'initial',
     width: '878px',lineHeight:"28px"}}>{listQuestions}</div></div>
 
-</div>    
+</div>     
 
                 </form>
                 </div>
                 <AdminLogout ></AdminLogout>
 
         </div>
+        </>
     )
     else{
+      return <h3 style={{textAlign:'center'}}>Desktop view is required ,Open this page with your Pc</h3>
+    }
+    
+    else {
       return <Loader></Loader>
     }
+    
+    
 
 }
 

@@ -331,7 +331,7 @@ if(userSession&& !loading)
             
             />
             </div> 
-            <div>
+            <div style={{    overflowX: "hidden"}}>
 <div className="doughnutContainer">
       <Doughnut
         data={{
